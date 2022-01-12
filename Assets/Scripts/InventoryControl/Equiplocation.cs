@@ -11,7 +11,12 @@ namespace RPG.InventoryControl
         Boots,
         Weapon,
         Shield,
-        Gloves
+        Gloves,
+        Ring,
+        Cloak,
+        Belt,
+        Necklace,
+        Ammo
     }
 }
 

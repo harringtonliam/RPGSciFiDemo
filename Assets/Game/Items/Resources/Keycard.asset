@@ -16,5 +16,5 @@ MonoBehaviour:
   displayName: Keycard
   description: A keycard can be used for opening doors
   icon: {fileID: 21300000, guid: a73fc984a2ae610429878a6d537343ce, type: 3}
-  pickup: {fileID: 0}
+  pickup: {fileID: 7864711616720041944, guid: 763ea97bdec486d48a23d6af58e93949, type: 3}
   isStackable: 0

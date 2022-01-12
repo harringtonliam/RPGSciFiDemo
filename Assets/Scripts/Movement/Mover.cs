@@ -4,32 +4,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using RPG.Core;
-//using RPG.Saving;
-//using RPG.Attributes;
+using RPG.Saving;
+using RPG.Attributes;
 
 namespace RPG.Movement
 {
-    public class Mover : MonoBehaviour, IAction//, ISaveable
+    public class Mover : MonoBehaviour, IAction, ISaveable
     {
         [SerializeField] float maxSpeed = 6f;
         [SerializeField] float maxPathLength = 40f;
 
         NavMeshAgent navMeshAgent;
-        //TODO: Implement Health
-        //Health health;
+        Health health;
 
         // Start is called before the first frame update
         void Start()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
-            //health = GetComponent<Health>();
+            health = GetComponent<Health>();
         }
 
         // Update is called once per frame
         void Update()
         {
 
-            //navMeshAgent.enabled = !health.IsDead;
+            navMeshAgent.enabled = !health.IsDead;
             UpdateAnimator();
 
         }
@@ -88,24 +87,24 @@ namespace RPG.Movement
             navMeshAgent.isStopped = true;
         }
 
-        //TODO:  implement Saving
-        //public object CaptureState()
-        //{
-        //    //can also do this usinga struct
-        //    Dictionary<string, object> data = new Dictionary<string, object>();
-        //    data["position"] = new SerializableVector3(transform.position);
-        //    data["rotation"]=  new SerializableVector3(transform.eulerAngles);
-        //    return data;
-        //}
-        //public void RestoreState(object state)
-        //{
-        //    Dictionary<string, object> data  = (Dictionary<string, object>)state;
-        //    GetComponent<NavMeshAgent>().enabled = false;
-        //    transform.position = ((SerializableVector3)data["position"]).ToVector();
-        //    transform.eulerAngles = ((SerializableVector3)data["rotation"]).ToVector();
-        //    GetComponent<NavMeshAgent>().enabled = true;
 
-        //}
+        public object CaptureState()
+        {
+            //can also do this usinga struct
+            Dictionary<string, object> data = new Dictionary<string, object>();
+            data["position"] = new SerializableVector3(transform.position);
+            data["rotation"] = new SerializableVector3(transform.eulerAngles);
+            return data;
+        }
+        public void RestoreState(object state)
+        {
+            Dictionary<string, object> data = (Dictionary<string, object>)state;
+            GetComponent<NavMeshAgent>().enabled = false;
+            transform.position = ((SerializableVector3)data["position"]).ToVector();
+            transform.eulerAngles = ((SerializableVector3)data["rotation"]).ToVector();
+            GetComponent<NavMeshAgent>().enabled = true;
+
+        }
 
         private float GetPathLength(NavMeshPath navMeshPath)
         {

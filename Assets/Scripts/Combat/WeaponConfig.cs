@@ -12,6 +12,7 @@ namespace RPG.Combat
     {
         [SerializeField] AnimatorOverrideController weaponOverrideController = null;
         [SerializeField] Weapon equipedPrefab = null;
+        [SerializeField] AmmunitionType ammunitionType = AmmunitionType.None;
         [SerializeField] int weaponDamageDice = 4;
         [SerializeField] int weaponDamageDiceNumber = 1;
         [SerializeField] int weaponDamageAdditiveBonus = 0;
@@ -25,6 +26,8 @@ namespace RPG.Combat
 
 
         const string weaponName = "Weapon";
+
+        public AmmunitionType AmmunitionType {  get { return ammunitionType; } }
 
         public float WeaponDamage
         {

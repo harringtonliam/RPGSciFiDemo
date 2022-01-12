@@ -12,8 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be251821316fed84a97e38991fa8f1a2, type: 3}
   m_Name: PistolLowQuality
   m_EditorClassIdentifier: 
+  itemID: ae750373-7704-423d-a5a7-fda9904f2738
+  displayName: 
+  description: 
+  icon: {fileID: 0}
+  pickup: {fileID: 0}
+  isStackable: 0
+  allowedEquipLocation: 3
   weaponOverrideController: {fileID: 22100000, guid: 97e6d5f5b47648549b8ba4bd84deb6e1, type: 2}
   equipedPrefab: {fileID: 2184448118492454962, guid: 12df111335609a8469f9a9774f56601a, type: 3}
+  ammunitionType: 3
   weaponDamageDice: 4
   weaponDamageDiceNumber: 1
   weaponDamageAdditiveBonus: 0

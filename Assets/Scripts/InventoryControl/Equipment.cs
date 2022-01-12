@@ -54,7 +54,7 @@ namespace RPG.InventoryControl
             var equippedItemsForSerialization = new Dictionary<EquipLocation, string>();
             foreach (var pair in equippedItems)
             {
-                equippedItemsForSerialization[pair.Key] = pair.Value.ItemID;
+              equippedItemsForSerialization[pair.Key] = pair.Value.ItemID;
             }
             return equippedItemsForSerialization;
         }

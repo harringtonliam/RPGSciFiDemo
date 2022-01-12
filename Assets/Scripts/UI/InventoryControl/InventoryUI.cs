@@ -16,6 +16,12 @@ namespace RPG.UI.InventoryControl
 
         Inventory objectInventory;
 
+        public void SetInventoryObject(Inventory inventory)
+        {
+            objectInventory = inventory;
+            objectInventory.inventoryUpdated += Redraw;
+            Redraw();
+        }
 
         private void Awake()
         {
@@ -41,6 +47,8 @@ namespace RPG.UI.InventoryControl
                 itemUI.Setup(objectInventory, i);
             }
         }
+
+
 
  
     }

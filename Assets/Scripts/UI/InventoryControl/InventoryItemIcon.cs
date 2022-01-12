@@ -35,19 +35,18 @@ namespace RPG.UI.InventoryControl
                 iconImage.sprite = item.Icon;
             }
 
-            //TODO:  Code to display item number for stackable times
-            //if (itemNumber)
-            //{
-            //    if (number <= 1)
-            //    {
-            //        textContainer.SetActive(false);
-            //    }
-            //    else
-            //    {
-            //        textContainer.SetActive(true);
-            //        itemNumber.text = number.ToString();
-            //    }
-            //}
+            if (itemNumber)
+            {
+                if (number <= 1)
+                {
+                    textContainer.SetActive(false);
+                }
+                else
+                {
+                    textContainer.SetActive(true);
+                    itemNumber.text = number.ToString();
+                }
+            }
         }
     }
 

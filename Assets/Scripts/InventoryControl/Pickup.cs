@@ -38,10 +38,16 @@ namespace RPG.InventoryControl
 
         public void PickupItem()
         {
+            Debug.Log("Pickup Item");
             bool slotFoundOk = inventory.AddToFirstEmptySlot(inventoryItem, numberOfItems);
             if (slotFoundOk)
             {
                 Destroy(gameObject);
+                ScenePickups scenePickups = FindObjectOfType<ScenePickups>();
+                if (scenePickups != null)
+                {
+                    scenePickups.RemoveItem(this.inventoryItem, this.numberOfItems, this.transform.position);
+                }
             }
         }
 

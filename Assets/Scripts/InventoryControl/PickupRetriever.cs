@@ -8,20 +8,13 @@ using System;
 
 namespace RPG.InventoryControl
 {
-
-
-
     public class PickupRetriever : MonoBehaviour, IAction
     {
         [SerializeField] float pickUpRange = 1f;
 
         Pickup target;
 
-        // Start is called before the first frame update
-        void Start()
-        {
 
-        }
 
         // Update is called once per frame
         void Update()
@@ -43,7 +36,6 @@ namespace RPG.InventoryControl
         private void PickupBehaviour()
         {
             transform.LookAt(target.transform);
-            //target.Pickup(GetComponent<Fighting>());
             target.PickupItem();
 
         }

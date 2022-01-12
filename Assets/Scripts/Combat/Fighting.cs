@@ -24,16 +24,17 @@ namespace RPG.Combat
         float timeSinceLastAttack = Mathf.Infinity;
         WeaponConfig currentWeaponConfig;
         Weapon currentWeapon;
-        Equipment equipment;
+        WeaponStore weaponStore;
+        AmmunitionStore ammoStore;
 
 
         private void Awake()
         {
-            equipment = GetComponent<Equipment>();
+            weaponStore = GetComponent<WeaponStore>();
 
-            if (equipment)
+            if (weaponStore)
             {
-                equipment.equipmentUpdated += UpdateWeapon;
+                weaponStore.storeUpdated += UpdateWeapon;
             }
         }
 
@@ -44,7 +45,9 @@ namespace RPG.Combat
             {
                currentWeapon = EquipWeapon(defaultWeaponConfig);
             }
-            
+
+            ammoStore = GetComponent<AmmunitionStore>();
+
         }
 
 
@@ -89,7 +92,7 @@ namespace RPG.Combat
 
         private void UpdateWeapon()
         {
-            var weaponConfig = equipment.GetItemInSlot(EquipLocation.Weapon) as WeaponConfig;
+            var weaponConfig = weaponStore.GetActiveWeapon() as WeaponConfig;
             if (weaponConfig != null)
             {
                 EquipWeapon(weaponConfig);
@@ -98,7 +101,6 @@ namespace RPG.Combat
             {
                 EquipWeapon(defaultWeaponConfig);
             }
-
         }
 
         private void AttackBehaviour()
@@ -122,12 +124,18 @@ namespace RPG.Combat
         public void Hit()
         {
             if (target == null) return;
+
+            if (!UseAmmunition())
+            {
+                return;
+            }
             
             if (currentWeapon != null)
             {
                 currentWeapon.OnHit();
             }
-           
+
+          
             if (currentWeaponConfig.IsRangedWeapon && !CheckLineOfSite())
             {
                 return;
@@ -150,6 +158,30 @@ namespace RPG.Combat
             { 
                 target.TakeDamage(calculatedDamage, gameObject);
             }
+        }
+
+        private bool UseAmmunition()
+        {
+            if (currentWeaponConfig.AmmunitionType == AmmunitionType.None)
+            {
+                return true;
+            }
+
+            AmmunitionStore ammoStore = GetComponent<AmmunitionStore>();
+
+            //search for ammo type in ammstoreslot
+            int ammoStoreSlot = ammoStore.FindAmmunitionType(currentWeaponConfig.AmmunitionType);
+
+            //if none found return
+            if (ammoStoreSlot < 0)
+            {
+                return false;
+            }
+
+            //reduce ammo in slot by 1
+            ammoStore.RemoveItems(ammoStoreSlot, 1);
+            return true;
+
         }
 
         private bool CheckLineOfSite()

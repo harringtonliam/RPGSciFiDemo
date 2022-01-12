@@ -11,12 +11,13 @@ namespace RPG.InventoryControl
         [Tooltip("Maximum Inventory Size")]
         [SerializeField] int inventorySize = 12;
 
+        [SerializeField]
         InventorySlot[] inventorySlots;
 
 
 
  
-
+        [Serializable]
         public struct InventorySlot
         {
             public InventoryItem inventoryItem;
@@ -120,15 +121,19 @@ namespace RPG.InventoryControl
             return true;
         }
 
-        private void Start()
-        {
-            AddToFirstEmptySlot(InventoryItem.GetFromID("440c070e-d32e-4e7d-b261-e73515de5a0b"), 1);
-        }
-
-
         private void Awake()
         {
-            inventorySlots = new InventorySlot[inventorySize];
+            InventorySlot[] tempInevntorySlots = new InventorySlot[inventorySize];
+
+            if (inventorySlots != null)
+            {
+                for (int i = 0; i < inventorySlots.Length; i++)
+                {
+                    tempInevntorySlots[i] = inventorySlots[i];
+                }
+            }
+            //inventorySlots = new InventorySlot[inventorySize];
+            inventorySlots = tempInevntorySlots;
         }
 
         private int FindSlot(InventoryItem item)
