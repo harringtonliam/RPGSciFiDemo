@@ -9,13 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abb2fa84980d77c4bacc2250a2d22005, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d16d2f21679ed341817b50aeaab3e28, type: 3}
   m_Name: MedicalPackBasic
   m_EditorClassIdentifier: 
-  itemID: 974624af-293d-4ce7-8e68-542765b73fce
-  displayName: Medical Pack - Basic
-  description: Heals minor injuries
+  itemID: cfe79d03-c6f7-49f7-a51f-5de7d22092b1
+  displayName: Basic Medical Pack
+  description: 'For the treatment of minor wounds or injuries '
   icon: {fileID: 21300000, guid: 7e5ef2ddd3db31246bd9c6ab1c5e33f1, type: 3}
   pickup: {fileID: 7864711616720041944, guid: 55782e2452cd2824b8737ec15cd19427, type: 3}
   isStackable: 1
+  maxNumberInStack: 3
   isConsumable: 1
+  medicalPackHealingDice: 8
+  medicalPackHealingDiceNumber: 1
+  medicalPackHealingAdditiveBonus: 0

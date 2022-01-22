@@ -16,6 +16,8 @@ namespace RPG.UI.InventoryControl
         InventoryItem item;
         RPG.InventoryControl.Inventory inventory;
 
+
+
         public void Setup(Inventory inventory, int index)
         {
             this.inventory = inventory;
@@ -25,6 +27,7 @@ namespace RPG.UI.InventoryControl
 
         public void AddItems(InventoryItem item, int number)
         {
+            Debug.Log("InventorySlotUI AddItems = " + item.name + " " + number.ToString());
             inventory.AddItemToSlot(index, item, number);
         }
 
@@ -40,9 +43,10 @@ namespace RPG.UI.InventoryControl
 
         public int MaxAcceptable(InventoryItem item)
         {
+            Debug.Log("InventorySlotUI Max Acceptable item = " + item.name);
             if (inventory.HasSpaceFor(item))
             {
-                return int.MaxValue;
+                return item.MaxNumberInStack;
             }
             return 0;
         }

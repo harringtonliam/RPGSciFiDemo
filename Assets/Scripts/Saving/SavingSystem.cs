@@ -40,6 +40,19 @@ namespace RPG.Saving
             File.Delete(GetPathFromSaveFile(saveFile));
         }
 
+        public Dictionary<string, DateTime> ListAllSaveFiles()
+        {
+            Dictionary<string, DateTime> allSaveFiles = new Dictionary<string, DateTime>();
+            var allFiles = Directory.GetFiles(Application.persistentDataPath, "*.sav", SearchOption.TopDirectoryOnly);
+            for (int i = 0; i < allFiles.Length; i++)
+            {
+                FileInfo fileInfo = new FileInfo(allFiles[i]);
+                allSaveFiles.Add(fileInfo.Name, fileInfo.LastWriteTime);
+
+            }
+            return allSaveFiles;
+        }
+
         private Dictionary<string, object> LoadFile(string saveFile)
         {
             string path = GetPathFromSaveFile(saveFile);

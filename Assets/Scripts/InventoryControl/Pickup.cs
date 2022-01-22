@@ -38,7 +38,6 @@ namespace RPG.InventoryControl
 
         public void PickupItem()
         {
-            Debug.Log("Pickup Item");
             bool slotFoundOk = inventory.AddToFirstEmptySlot(inventoryItem, numberOfItems);
             if (slotFoundOk)
             {

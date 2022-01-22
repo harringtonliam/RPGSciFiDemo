@@ -46,7 +46,7 @@ namespace RPG.InventoryControl
 
         public bool AddToFirstEmptySlot(InventoryItem item, int number)
         {
-            int i = FindSlot(item);
+            int i = FindEmptySlot();
 
             if (i < 0)
             {
@@ -101,12 +101,22 @@ namespace RPG.InventoryControl
 
         public bool AddItemToSlot(int slot, InventoryItem item, int number)
         {
+            Debug.Log("Inventory Add Item to Slot " + item.name + " " + number.ToString());
             if (inventorySlots[slot].inventoryItem != null)
             {
                 return AddToFirstEmptySlot(item, number); ;
             }
 
             var i = FindStack(item);
+
+            if (i>=0)
+            {
+                if (inventorySlots[i].number + number > item.MaxNumberInStack)
+                {
+                    i = -1;
+                }
+            }
+
             if (i >= 0)
             {
                 slot = i;
@@ -136,9 +146,13 @@ namespace RPG.InventoryControl
             inventorySlots = tempInevntorySlots;
         }
 
-        private int FindSlot(InventoryItem item)
+        private int FindSlot(InventoryItem item )
         {
             int i = FindStack(item);
+            if (i >= 0 && inventorySlots[i].number >= item.MaxNumberInStack)
+            {
+                i = -1;
+            }
             if (i < 0)
             {
                 i = FindEmptySlot();

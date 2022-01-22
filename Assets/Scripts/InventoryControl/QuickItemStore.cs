@@ -61,6 +61,20 @@ namespace RPG.InventoryControl
             }
         }
 
+        public bool Use(int index, GameObject user)
+        {
+            if (dockedItems.ContainsKey(index))
+            {
+                dockedItems[index].actionItem.Use(user);
+                if (dockedItems[index].actionItem.IsConsumable)
+                {
+                    RemoveItems(index, 1);
+                }
+                return true;
+            }
+            return false;
+        }
+
         public void RemoveItems(int index, int number)
         {
             if (dockedItems.ContainsKey(index))
@@ -89,7 +103,7 @@ namespace RPG.InventoryControl
             }
             if (actionItem.IsConsumable)
             {
-                return int.MaxValue;
+                return item.MaxNumberInStack;
             }
             if (dockedItems.ContainsKey(index))
             {

@@ -88,7 +88,7 @@ namespace RPG.Combat
             }
             if (actionItem.IsStackable)
             {
-                return int.MaxValue;
+                return item.MaxNumberInStack;
             }
             if (dockedItems.ContainsKey(index))
             {

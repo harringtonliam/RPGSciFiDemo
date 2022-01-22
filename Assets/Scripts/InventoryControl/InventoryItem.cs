@@ -21,12 +21,15 @@ namespace RPG.InventoryControl
         [SerializeField] Pickup pickup = null;
         [Tooltip("If true, multiple items of this type can be stacked in the same inventory slot.")]
         [SerializeField] bool isStackable = false;
+        [Tooltip("For stackable items this is the max number of items of this type can be stacked in the same inventory slot.")]
+        [SerializeField] int maxNumberInStack = 20;
 
         public string  ItemID { get { return itemID; } }
         public string DisplayName {  get { return displayName; } }
         public string Description { get { return description; } }
         public Sprite Icon { get { return icon; } }
         public bool IsStackable {get {return isStackable;} }
+        public int MaxNumberInStack {  get { return maxNumberInStack; } }
 
         static Dictionary<string, InventoryItem> itemLookupCache;
 

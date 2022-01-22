@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.UI.Menus;
 
 namespace RPG.UI
 {
@@ -8,6 +9,7 @@ namespace RPG.UI
     {
         [SerializeField] KeyCode toogleKey = KeyCode.Escape;
         [SerializeField] GameObject uiCanvas = null;
+        [SerializeField] bool pauseGameOnOpen = false;
 
         // Start is called before the first frame update
         void Start()
@@ -20,7 +22,42 @@ namespace RPG.UI
         {
             if (Input.GetKeyDown(toogleKey))
             {
-                uiCanvas.SetActive(!uiCanvas.activeSelf);
+                ToggleUI();
+            }
+        }
+
+        public void SetUiActive(bool isActive)
+        {
+            uiCanvas.SetActive(isActive);
+            PauseOrResume();
+
+        }
+
+        public void ToggleUI()
+        {
+   
+            uiCanvas.SetActive(!uiCanvas.activeSelf);
+            PauseOrResume();
+        }
+
+        private void PauseOrResume()
+        {
+            PlayPause playPause = FindObjectOfType<PlayPause>();
+            if( playPause == null) return;
+            if (pauseGameOnOpen)
+            {
+                if (uiCanvas.activeSelf)
+                {
+                    playPause.PauseGame();
+                }
+                else
+                {
+                    playPause.ResumeGame();
+                }
+            }
+            else
+            {
+                playPause.ResumeGame();
             }
         }
     }

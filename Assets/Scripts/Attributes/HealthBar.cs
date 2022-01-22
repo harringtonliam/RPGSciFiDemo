@@ -26,6 +26,8 @@ namespace RPG.Attributes
 
         private float GetHealthFraction()
         {
+            if (healthComponent == null) return 1f;
+
             return healthComponent.HealthPoints / healthComponent.GetMaxHealthPoints();
         }
     }

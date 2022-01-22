@@ -42,7 +42,7 @@ namespace RPG.SceneManagement
 
             SavingWrapper saveingWrapper = FindObjectOfType<SavingWrapper>();
             DisablePlayerControl();  //player on old scene
-            saveingWrapper.Save();
+            saveingWrapper.AutoSave();
 
             yield return SceneManager.LoadSceneAsync(sceneToLoad);
             DisablePlayerControl();  //player in new scene
@@ -51,7 +51,7 @@ namespace RPG.SceneManagement
 
             Portal otherPortal = GetOtherPortal();
             UpdatePlayer(otherPortal);
-            saveingWrapper.Save();
+            saveingWrapper.AutoSave();
 
             yield return fader.FadeIn(fadeTime);
 

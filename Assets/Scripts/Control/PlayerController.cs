@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using RPG.Movement;
-using RPG.Combat;
+using RPG.Core;
 using System;
 using RPG.Attributes;
 using UnityEngine.AI;
@@ -58,6 +58,14 @@ namespace RPG.Control
             SetCursorType(CursorType.None);
         }
 
+        public void PlayerDead()
+        {
+            GameOver gameOver = FindObjectOfType<GameOver>();
+            if (gameOver!= null)
+            {
+                gameOver.GameOverActions();
+            }
+        }
 
 
         private void SetCursorType(CursorType cursorType)
@@ -162,5 +170,7 @@ namespace RPG.Control
         {
             return Camera.main.ScreenPointToRay(Input.mousePosition);
         }
+
+        
     }
 }

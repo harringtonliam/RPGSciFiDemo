@@ -99,10 +99,14 @@ namespace RPG.Combat
                 dockedItem.Value.isActive = false;
             }
 
-            if (dockedItems[slot] != null) 
+            if (dockedItems.ContainsKey(slot))
             {
-                dockedItems[slot].isActive = true;
+                if (dockedItems[slot] != null)
+                {
+                    dockedItems[slot].isActive = true;
+                }
             }
+
 
             if (storeUpdated != null)
             {
@@ -122,7 +126,7 @@ namespace RPG.Combat
             }
             if (actionItem.IsStackable)
             {
-                return int.MaxValue;
+                return item.MaxNumberInStack;
             }
             if (dockedItems.ContainsKey(index))
             {
