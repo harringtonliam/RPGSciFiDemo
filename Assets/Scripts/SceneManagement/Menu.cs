@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using RPG.SceneManagement;
 
 namespace RPG.UI.SceneManagement
 {
@@ -15,6 +15,7 @@ namespace RPG.UI.SceneManagement
 
         public void LoadStartScenee()
         {
+            FindObjectOfType<SavingWrapper>().DeleteDefaultSaveFile();
             SceneManager.LoadScene(startSceneIndex);
         }
 
@@ -28,7 +29,6 @@ namespace RPG.UI.SceneManagement
             if (loadGameCanvas == null) return;
 
             loadGameCanvas.SetActive(true);
-            Debug.Log("ShowloadGameCanvas");
             
         }
 

@@ -15,6 +15,7 @@ namespace RPG.UI.Menus
 
         public void Setup(string savedGameName, string savedGameTime)
         {
+
             savedGameNameText.text = savedGameName;
             savedGameTimeText.text = savedGameTime;
         }
@@ -32,6 +33,7 @@ namespace RPG.UI.Menus
 
         public void LoadGame()
         {
+            Debug.Log("Save game ui  = Loadgame");
             FindObjectOfType<SavingWrapper>().LoadSavedGame(savedGameNameText.text);
 
         }

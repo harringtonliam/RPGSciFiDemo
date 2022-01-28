@@ -101,7 +101,6 @@ namespace RPG.InventoryControl
 
         public bool AddItemToSlot(int slot, InventoryItem item, int number)
         {
-            Debug.Log("Inventory Add Item to Slot " + item.name + " " + number.ToString());
             if (inventorySlots[slot].inventoryItem != null)
             {
                 return AddToFirstEmptySlot(item, number); ;
@@ -213,6 +212,7 @@ namespace RPG.InventoryControl
 
         public void RestoreState(object state)
         {
+            Debug.Log("Restore State " + gameObject.name);
             var slotStrings = (InventorySlotRecord[])state;
             for (int i = 0; i < inventorySize; i++)
             {

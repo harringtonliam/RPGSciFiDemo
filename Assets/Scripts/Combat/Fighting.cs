@@ -127,6 +127,7 @@ namespace RPG.Combat
 
             if (!UseAmmunition())
             {
+                ChangeWeapon();
                 return;
             }
             
@@ -160,6 +161,12 @@ namespace RPG.Combat
             }
         }
 
+        private void ChangeWeapon()
+        {
+            //find a different weapon
+            weaponStore.FindWeaponToChangeTo();
+        }
+
         private bool UseAmmunition()
         {
             if (currentWeaponConfig.AmmunitionType == AmmunitionType.None)
@@ -169,12 +176,13 @@ namespace RPG.Combat
 
             AmmunitionStore ammoStore = GetComponent<AmmunitionStore>();
 
-            //search for ammo type in ammstoreslot
+            //search for ammo type in ammostoreslot
             int ammoStoreSlot = ammoStore.FindAmmunitionType(currentWeaponConfig.AmmunitionType);
 
             //if none found return
             if (ammoStoreSlot < 0)
             {
+                Debug.Log("Out of ammo");
                 return false;
             }
 

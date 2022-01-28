@@ -9,8 +9,10 @@ namespace RPG.Combat
 {
     public class WeaponStore : MonoBehaviour, ISaveable
     {
-        Dictionary<int, DockedItemSlot> dockedItems = new Dictionary<int, DockedItemSlot>();
-        
+        [SerializeField]
+        DockedItemSlot[] dockedItems = new  DockedItemSlot[4];
+
+        [Serializable]
         private class DockedItemSlot
         {
             public WeaponConfig weaponConfig;
@@ -20,19 +22,27 @@ namespace RPG.Combat
 
         public event Action storeUpdated;
 
+        private void Start()
+        {
+            if (storeUpdated != null)
+            {
+                storeUpdated();
+            }
+        }
+
 
         public WeaponConfig GetAction(int index)
         {
-            if (dockedItems.ContainsKey(index))
-            {
+            //if (dockedItems.Length <= index)
+            //{
                 return dockedItems[index].weaponConfig;
-            }
-            return null;
+            //}
+            //return null;
         }
 
         public int GetNumber(int index)
         {
-            if (dockedItems.ContainsKey(index))
+            if (dockedItems.Length > index)
             {
                 return dockedItems[index].number;
             }
@@ -42,12 +52,9 @@ namespace RPG.Combat
 
         public void AddAction(InventoryItem item, int index, int number, bool isActive)
         {
-            if (dockedItems.ContainsKey(index))
+            if (object.ReferenceEquals(item, dockedItems[index].weaponConfig))
             {
-                if (object.ReferenceEquals(item, dockedItems[index].weaponConfig))
-                {
-                    dockedItems[index].number += number;
-                }
+               dockedItems[index].number += number;
             }
             else
             {
@@ -66,12 +73,14 @@ namespace RPG.Combat
 
         public void RemoveItems(int index, int number)
         {
-            if (dockedItems.ContainsKey(index))
+            if (dockedItems.Length > index)
             {
                 dockedItems[index].number -= number;
                 if (dockedItems[index].number <= 0)
                 {
-                    dockedItems.Remove(index);
+                    dockedItems[index].weaponConfig = null;
+                    dockedItems[index].number = 0;
+                    dockedItems[index].isActive = false;
                 }
                 if (storeUpdated != null)
                 {
@@ -83,30 +92,38 @@ namespace RPG.Combat
         {
             foreach (var dockedItem  in dockedItems)
             {
-                if (dockedItem.Value.isActive)
+                if (dockedItem.isActive)
                 {
-                    return dockedItem.Value.weaponConfig;
+                    return dockedItem.weaponConfig;
                 }
             }
 
             return null;
         }
 
+        public int GetActiveWeaponIndex()
+        {
+            for (int i = 0; i < dockedItems.Length; i++)
+            {
+                if (dockedItems[i].isActive)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
         public void SetActiveWeapon(int slot)
         {
             foreach (var dockedItem in dockedItems)
             {
-                dockedItem.Value.isActive = false;
+                dockedItem.isActive = false;
             }
 
-            if (dockedItems.ContainsKey(slot))
+            if (dockedItems[slot] != null)
             {
-                if (dockedItems[slot] != null)
-                {
-                    dockedItems[slot].isActive = true;
-                }
+                dockedItems[slot].isActive = true;
             }
-
 
             if (storeUpdated != null)
             {
@@ -120,7 +137,7 @@ namespace RPG.Combat
             var actionItem = item as WeaponConfig;
             if (!actionItem) return 0;
 
-            if (dockedItems.ContainsKey(index) && !object.ReferenceEquals(item, dockedItems[index].weaponConfig))
+            if (dockedItems.Length <= index && !object.ReferenceEquals(item, dockedItems[index].weaponConfig))
             {
                 return 0;
             }
@@ -128,12 +145,37 @@ namespace RPG.Combat
             {
                 return item.MaxNumberInStack;
             }
-            if (dockedItems.ContainsKey(index))
+            if (dockedItems.Length <= index)
             {
                 return 0;
             }
 
             return 1;
+        }
+
+        public void FindWeaponToChangeTo()
+        {
+            AmmunitionStore ammunitionStore = GetComponent<AmmunitionStore>();
+            int emptySlot = 0;
+            for (int i = 0; i < dockedItems.Length; i++)
+            {
+                if (dockedItems[i].weaponConfig != null && dockedItems[i].weaponConfig.AmmunitionType == AmmunitionType.None)
+                {
+                    SetActiveWeapon(i);
+                    return;
+                }
+
+                if (dockedItems[i].weaponConfig != null  && ammunitionStore.FindAmmunitionType(dockedItems[i].weaponConfig.AmmunitionType) >= 0)
+                {
+                    SetActiveWeapon(i);
+                    return;
+                }
+                if (dockedItems[i].weaponConfig == null)
+                {
+                    emptySlot = i;
+                }
+            }
+            SetActiveWeapon(emptySlot);
         }
 
         [System.Serializable]
@@ -146,24 +188,32 @@ namespace RPG.Combat
 
         public object CaptureState()
         {
-            var state = new Dictionary<int, DockedItemRecord>();
-            foreach (var pair in dockedItems)
+            var state = new DockedItemRecord[4];
+            for (int i = 0; i < dockedItems.Length; i++)
             {
-                var record = new DockedItemRecord();
-                record.itemID = pair.Value.weaponConfig.ItemID;
-                record.number = pair.Value.number;
-                record.isActive = pair.Value.isActive;
-                state[pair.Key] = record;
+                if (dockedItems[i].weaponConfig != null)
+                {
+                    state[i].itemID = dockedItems[i].weaponConfig.ItemID;
+                    state[i].number = dockedItems[i].number;
+                    state[i].isActive = dockedItems[i].isActive;
+                }
             }
             return state;
         }
             
         public void RestoreState(object state)
         {
-            var stateDict = (Dictionary<int, DockedItemRecord>)state;
-            foreach (var pair in stateDict)
+            var stateDict = (DockedItemRecord[])state;
+            int activeWeaponIndex = 0;
+            for (int i = 0; i < stateDict.Length; i++)
             {
-                AddAction(WeaponConfig.GetFromID(pair.Value.itemID) as WeaponConfig, pair.Key, pair.Value.number, pair.Value.isActive);
+                AddAction(WeaponConfig.GetFromID(stateDict[i].itemID) as WeaponConfig, i, stateDict[i].number, stateDict[i].isActive);
+                if (stateDict[i].isActive) activeWeaponIndex = i;
+            }
+            SetActiveWeapon(activeWeaponIndex);
+            if (storeUpdated != null)
+            {
+                storeUpdated();
             }
         }
 

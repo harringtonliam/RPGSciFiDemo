@@ -9,12 +9,13 @@ namespace RPG.InventoryControl
     [RequireComponent(typeof(Inventory))]
     public class Container : MonoBehaviour,  IRaycastable
     {
-
-        [SerializeField] UnityEvent<Inventory> openContainer;
-        [SerializeField] UnityEvent closeContainer;
-
-
         bool isOpen = false;
+        ContainerLink containerLink = null;
+
+        private void Start()
+        {
+            containerLink = FindObjectOfType<ContainerLink>();
+        }
 
         public CursorType GetCursorType()
         {
@@ -39,8 +40,11 @@ namespace RPG.InventoryControl
             if (isOpen) return;
 
             isOpen = true;
-            Inventory inventory = GetComponent<Inventory>();
-            openContainer.Invoke(inventory);
+            if (containerLink != null)
+            {
+                containerLink.OpenContainer(this);
+            }
+            
         }
 
         public void CloseContainer()
@@ -48,8 +52,10 @@ namespace RPG.InventoryControl
             if (!isOpen) return;
 
             isOpen = false;
-
-            closeContainer.Invoke();
+            if (containerLink != null)
+            {
+                containerLink.CloseContainer();
+            }
         }
 
 

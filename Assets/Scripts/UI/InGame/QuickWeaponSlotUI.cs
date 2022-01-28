@@ -11,6 +11,7 @@ namespace RPG.UI.InGame
     {
         [SerializeField] InventoryItemIcon icon = null;
         [SerializeField] int index = 0;
+        [SerializeField] GameObject activeIndicator;
 
 
         //cache
@@ -43,6 +44,14 @@ namespace RPG.UI.InGame
         private void UpdateIcon()
         {
             icon.SetItem(GetItem(), GetNumber());
+            if (weaponStore.GetActiveWeaponIndex() == index)
+            {
+                activeIndicator.SetActive(true);
+            }
+            else
+            {
+                activeIndicator.SetActive(false);
+            }
         }
 
 

@@ -15,6 +15,7 @@ namespace RPG.Saving
         {
             Dictionary<string, object> state = LoadFile(saveFile);
             int buildIndex = SceneManager.GetActiveScene().buildIndex;
+
             if (state.ContainsKey("lastSceneBuildIndex"))
             {
                 buildIndex = (int)state["lastSceneBuildIndex"];
@@ -47,7 +48,7 @@ namespace RPG.Saving
             for (int i = 0; i < allFiles.Length; i++)
             {
                 FileInfo fileInfo = new FileInfo(allFiles[i]);
-                allSaveFiles.Add(fileInfo.Name, fileInfo.LastWriteTime);
+                allSaveFiles.Add(Path.GetFileNameWithoutExtension(fileInfo.Name), fileInfo.LastWriteTime);
 
             }
             return allSaveFiles;
@@ -70,7 +71,6 @@ namespace RPG.Saving
         private void SaveFile(string saveFile, object state)
         {
             string path = GetPathFromSaveFile(saveFile);
-            print("Saving to " + path);
             using (FileStream stream = File.Open(path, FileMode.Create))
             {
                 BinaryFormatter formatter = new BinaryFormatter();

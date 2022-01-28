@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8883998806961192623}
   - component: {fileID: 8883998806961192620}
   - component: {fileID: 6259400277847192351}
+  - component: {fileID: 6385750091290696520}
   m_Layer: 5
   m_Name: QuickWeaponSlot
   m_TagString: Untagged
@@ -91,6 +92,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 8378726606134343571}
   index: 0
+--- !u!114 &6385750091290696520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8883998806961192594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afaf3f7873902e645a305961803b0943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipPrefab: {fileID: 6796662661069912602, guid: 65202f695f8863a4098549973d7d484d, type: 3}
 --- !u!1001 &2858025948674848433
 PrefabInstance:
   m_ObjectHideFlags: 0

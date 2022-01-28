@@ -19,9 +19,9 @@ namespace RPG.SceneManagement
             //StartCoroutine(LoadLastScene());
         }
 
-        private IEnumerator LoadLastScene()
+        private IEnumerator LoadLastScene(string savedGame)
         {
-            yield return  GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile);
+            yield return  GetComponent<SavingSystem>().LoadLastScene(savedGame);
             Fader fader = FindObjectOfType<Fader>();
             fader.FadeOutImmediate();
             yield return fader.FadeIn(fadeTime); ;
@@ -30,7 +30,8 @@ namespace RPG.SceneManagement
 
         public void LoadSavedGame(string savedGame)
         {
-            StartCoroutine(LoadLastScene());
+            Debug.Log("SaveWrapper LoadSavedGame " + savedGame);
+            StartCoroutine(LoadLastScene(savedGame));
         }
 
 
@@ -60,10 +61,14 @@ namespace RPG.SceneManagement
             GetComponent<SavingSystem>().Delete(filename);
         }
 
+        public void DeleteDefaultSaveFile()
+        {
+            GetComponent<SavingSystem>().Delete(defaultSaveFile);
+        }
+
 
         public Dictionary<string, DateTime> ListSaveFiles()
         {
-            Debug.Log("saveing wrapper list all save files");
 
             Dictionary<string, DateTime> allSaveFiles = GetComponent<SavingSystem>().ListAllSaveFiles();
 
