@@ -9,6 +9,8 @@ namespace RPG.Combat
     [RequireComponent(typeof(Health))]
     public class CombatTarget : MonoBehaviour, IRaycastable
     {
+        [SerializeField] bool isActive = true;
+
         public CursorType GetCursorType()
         {
             return CursorType.Combat;
@@ -17,7 +19,7 @@ namespace RPG.Combat
         public bool HandleRaycast(PlayerController playerController)
         {
             Fighting fighting = playerController.transform.GetComponent<Fighting>();
-            if (fighting.CanAttack(gameObject))
+            if (fighting.CanAttack(gameObject)  && isActive)
             {
                 if (Input.GetMouseButtonDown(0))
                 {

@@ -22,4 +22,4 @@ MonoBehaviour:
   isConsumable: 1
   medicalPackHealingDice: 8
   medicalPackHealingDiceNumber: 1
-  medicalPackHealingAdditiveBonus: 0
+  medicalPackHealingAdditiveBonus: 1

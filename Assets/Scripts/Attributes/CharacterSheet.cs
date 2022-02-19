@@ -11,7 +11,7 @@ namespace RPG.Attributes
         [SerializeField] Sprite portrait = null;
 
 
-        public string CharatcerName { get { return characterName; } }
+        public string CharacterName { get { return characterName; } }
         public Sprite Portrait { get { return portrait; } }
 
         // Start is called before the first frame update

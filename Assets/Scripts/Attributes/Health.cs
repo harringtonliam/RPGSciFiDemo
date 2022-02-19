@@ -70,7 +70,7 @@ namespace RPG.Attributes
                 Die();
 
             }
-            else
+            else if (instigator.tag == "Player")
             {
                 takeDamage.Invoke(damage);
             }
@@ -103,7 +103,11 @@ namespace RPG.Attributes
                 animator.SetTrigger("die");
             } 
             isDead = true;
-            GetComponent<ActionScheduler>().CancelCurrentAction();
+            ActionScheduler actionScheduler = GetComponent<ActionScheduler>();
+            if (actionScheduler != null)
+            {
+                actionScheduler.CancelCurrentAction();
+            }
         }
 
         private void BaseStats_onLevelUp()

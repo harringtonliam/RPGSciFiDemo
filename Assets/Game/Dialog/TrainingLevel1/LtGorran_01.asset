@@ -1,0 +1,449 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7871783103813460341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e3078929ffd704c9b58cf7f967ae98, type: 3}
+  m_Name: 1eb0ae16-3f36-41db-bd9c-455e5c15a4f3
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Private Kim.  Are you ready for your assessment?
+  children:
+  - babba5cd-bcc4-4035-bf29-921db6a9fdd0
+  rect:
+    serializedVersion: 2
+    x: 50
+    y: 63
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-7547094443759318398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e3078929ffd704c9b58cf7f967ae98, type: 3}
+  m_Name: fa2022c8-9a99-4910-a8e1-287aac1a424d
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Hand to Hand combat?
+  children:
+  - c61deea5-59db-45ef-8259-dac997d87653
+  rect:
+    serializedVersion: 2
+    x: 872
+    y: 575
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-4075180622948807853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e3078929ffd704c9b58cf7f967ae98, type: 3}
+  m_Name: 30abbe7d-3f6d-4f4f-83a3-a0428a933213
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: As that all sir?
+  children:
+  - 41a0917f-5980-492b-bc8f-e480e975b21b
+  rect:
+    serializedVersion: 2
+    x: 1859
+    y: 564
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-868762595786970870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e3078929ffd704c9b58cf7f967ae98, type: 3}
+  m_Name: babba5cd-bcc4-4035-bf29-921db6a9fdd0
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Assessment Sir?
+  children:
+  - 19afc9ce-be35-4b0e-9851-071c54061d95
+  rect:
+    serializedVersion: 2
+    x: 290
+    y: 64
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-715977226884574230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e3078929ffd704c9b58cf7f967ae98, type: 3}
+  m_Name: 41a0917f-5980-492b-bc8f-e480e975b21b
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: There will be several Training Dummies between you and the exit. 
+    Despatch them if they try to stop you.  Remember to report to Lt Wilf when you
+    finish.  No no more chat Private, its time for you to begin.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 2151
+    y: 561
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-675212733233768544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e3078929ffd704c9b58cf7f967ae98, type: 3}
+  m_Name: 2131365c-181e-469a-87fd-78e43c1e714d
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Take the equipment from teh crate behind you.  When you are ready
+    procees through the door.  Work your way through the test area to the other side. 
+    2nd Lt Wilf will be waiting for you?
+  children:
+  - 0b7b75ea-9b52-4635-8750-d3795e510ef9
+  - 30abbe7d-3f6d-4f4f-83a3-a0428a933213
+  rect:
+    serializedVersion: 2
+    x: 1601
+    y: 569
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-458764278731251936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e3078929ffd704c9b58cf7f967ae98, type: 3}
+  m_Name: 0d01350f-82eb-4b01-b619-905d94dae9ac
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Good.  The first test will assess your ability in hand to hand combat.
+  children:
+  - fa2022c8-9a99-4910-a8e1-287aac1a424d
+  rect:
+    serializedVersion: 2
+    x: 491
+    y: 680
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095a95c4ffea4644ba71ebbf36814ac5, type: 3}
+  m_Name: LtGorran_01
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -7871783103813460341}
+  - {fileID: -868762595786970870}
+  - {fileID: 4583678149520461855}
+  - {fileID: 7369731613047760492}
+  - {fileID: 5303364294689133119}
+  - {fileID: 1445717149025103765}
+  - {fileID: 9191532808211825460}
+  - {fileID: 3475399920148574860}
+  - {fileID: -458764278731251936}
+  - {fileID: 9013638890724356951}
+  - {fileID: -7547094443759318398}
+  - {fileID: 5441944806229486446}
+  - {fileID: 6711891744678701955}
+  - {fileID: -675212733233768544}
+  - {fileID: 1873803062677039178}
+  - {fileID: -4075180622948807853}
+  - {fileID: -715977226884574230}
+  newNodeOffSet: {x: 250, y: 0}
+--- !u!114 &1445717149025103765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e3078929ffd704c9b58cf7f967ae98, type: 3}
+  m_Name: 66e09c79-b743-406b-b7d8-13e0759a3039
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: I'm ready Sir!
+  children:
+  - 0d01350f-82eb-4b01-b619-905d94dae9ac
+  rect:
+    serializedVersion: 2
+    x: 822
+    y: 361
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &1873803062677039178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e3078929ffd704c9b58cf7f967ae98, type: 3}
+  m_Name: 0b7b75ea-9b52-4635-8750-d3795e510ef9
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Whats the catch Sir?
+  children:
+  - 41a0917f-5980-492b-bc8f-e480e975b21b
+  rect:
+    serializedVersion: 2
+    x: 1860
+    y: 678
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &3475399920148574860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e3078929ffd704c9b58cf7f967ae98, type: 3}
+  m_Name: 929c2b98-c2cc-4214-bce7-91c87c546ea5
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: The first test will asses you ability with hand to hand combat
+  children:
+  - fa2022c8-9a99-4910-a8e1-287aac1a424d
+  rect:
+    serializedVersion: 2
+    x: 497
+    y: 520
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &4583678149520461855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e3078929ffd704c9b58cf7f967ae98, type: 3}
+  m_Name: 19afc9ce-be35-4b0e-9851-071c54061d95
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Yes assessment.  I've been ordered to conduct a series of tests to
+    assess the effectivess of our training.  You've been choosen as the subject.
+  children:
+  - 1eeda4d2-dcca-482e-a840-903318828b8e
+  - 833f3dc1-8d11-42bb-a822-2b92d1fff583
+  - 66e09c79-b743-406b-b7d8-13e0759a3039
+  rect:
+    serializedVersion: 2
+    x: 546
+    y: 66
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &5303364294689133119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e3078929ffd704c9b58cf7f967ae98, type: 3}
+  m_Name: 833f3dc1-8d11-42bb-a822-2b92d1fff583
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: With your permission Sir, what kind of test?
+  children:
+  - 929c2b98-c2cc-4214-bce7-91c87c546ea5
+  rect:
+    serializedVersion: 2
+    x: 820
+    y: 217
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &5441944806229486446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e3078929ffd704c9b58cf7f967ae98, type: 3}
+  m_Name: c61deea5-59db-45ef-8259-dac997d87653
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Specifically hand to hand combat with a Knife.  Remember knifes don't
+    run aout of bullets.
+  children:
+  - a0a7c63a-0df2-4a13-ba15-b5beaa16a18b
+  rect:
+    serializedVersion: 2
+    x: 1116
+    y: 572
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &6711891744678701955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e3078929ffd704c9b58cf7f967ae98, type: 3}
+  m_Name: a0a7c63a-0df2-4a13-ba15-b5beaa16a18b
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Sir?  What esactly do I need to do?
+  children:
+  - 2131365c-181e-469a-87fd-78e43c1e714d
+  rect:
+    serializedVersion: 2
+    x: 1351
+    y: 569
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &7369731613047760492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e3078929ffd704c9b58cf7f967ae98, type: 3}
+  m_Name: 1eeda4d2-dcca-482e-a840-903318828b8e
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Why me Sir?
+  children:
+  - 3896bae8-8f90-4469-8a95-0bc24c93c8b7
+  rect:
+    serializedVersion: 2
+    x: 824
+    y: 67
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &9013638890724356951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e3078929ffd704c9b58cf7f967ae98, type: 3}
+  m_Name: edaa5946-9523-492e-a561-2363f49504f4
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Yes Sir!
+  children:
+  - 929c2b98-c2cc-4214-bce7-91c87c546ea5
+  rect:
+    serializedVersion: 2
+    x: 1324
+    y: 67
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &9191532808211825460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e3078929ffd704c9b58cf7f967ae98, type: 3}
+  m_Name: 3896bae8-8f90-4469-8a95-0bc24c93c8b7
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Because those are your orders Private!
+  children:
+  - edaa5946-9523-492e-a561-2363f49504f4
+  rect:
+    serializedVersion: 2
+    x: 1074
+    y: 67
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 

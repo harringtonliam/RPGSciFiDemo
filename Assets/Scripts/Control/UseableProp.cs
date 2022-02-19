@@ -13,6 +13,8 @@ namespace RPG.Control
         [SerializeField] bool isActivated = false;
         [SerializeField] UnityEvent<bool> useProp;
         [SerializeField] UnityEvent<float> usePropFloat;
+        [SerializeField] UnityEvent<PatrolPath> usePropPatrolPath;
+        [SerializeField] UnityEvent<GameObject> usePropCombatTarget;
         [TextArea]
         [SerializeField] string mouseOverTextActive = "Click to deactivate this item";
         [TextArea]
@@ -24,6 +26,10 @@ namespace RPG.Control
         [SerializeField] Text usePropText = null;
         [SerializeField] float deactivatedValue = 5f;
         [SerializeField] float activatedValue = 10f;
+        [SerializeField] PatrolPath deactivatedPatrolPath;
+        [SerializeField] PatrolPath activatedPatrolPath;
+        [SerializeField] GameObject deactivatedCombatTarget;
+        [SerializeField] GameObject activatedCombatTaregt;
         [SerializeField] AudioSource activateSound;
         [SerializeField] AudioSource deactivateSound;
 
@@ -53,10 +59,14 @@ namespace RPG.Control
             if (isActivated)
             {
                 usePropFloat.Invoke(activatedValue);
+                usePropPatrolPath.Invoke(activatedPatrolPath);
+                usePropCombatTarget.Invoke(activatedCombatTaregt);
             }
             else
             {
                 usePropFloat.Invoke(deactivatedValue);
+                usePropPatrolPath.Invoke(deactivatedPatrolPath);
+                usePropCombatTarget.Invoke(deactivatedCombatTarget);
             }
 
             if (isActivated && activateSound != null)

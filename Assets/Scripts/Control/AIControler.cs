@@ -9,10 +9,9 @@ using RPG.Attributes;
 
 namespace RPG.Control
 {
-
-
     public class AIControler : MonoBehaviour
     {
+        [SerializeField] AIRelationship aIRelationship = AIRelationship.Hostile;
         [SerializeField] float chaseDistance = 5f;
         [SerializeField] float suspicionTime = 2f;
         [SerializeField] float aggrevationCoolDownTime = 2f;
@@ -22,10 +21,11 @@ namespace RPG.Control
         [Range (0f, 1f)]
         [SerializeField] float patrolSpeedFraction = 0.2f;
         [SerializeField] float shoutDistance = 5f;
-
+        [SerializeField] GameObject combatTargetGameObject;
 
         GameObject player;
         Mover mover;
+        
 
         Vector3 guardPosition;
         float timeSinceLastSawPlayer = Mathf.Infinity;
@@ -38,6 +38,10 @@ namespace RPG.Control
         {
             player = GameObject.FindWithTag("Player");
             mover = GetComponent<Mover>();
+            if (aIRelationship == AIRelationship.Hostile)
+            {
+                combatTargetGameObject = player;
+            }
         }
 
         // Start is called before the first frame update
@@ -68,6 +72,17 @@ namespace RPG.Control
         public void SetChaseDistance(float newChaseDistance)
         {
             chaseDistance = newChaseDistance;
+        }
+
+        public void SetPatrolPath(PatrolPath newPatrolPath)
+        {
+            patrolPath = newPatrolPath;
+            currentWaypointIndex = 0;
+        }
+
+        public void SetCombatTarget(GameObject target)
+        {
+            combatTargetGameObject = target;
         }
 
         private bool InteractWithPatrolPath()
@@ -137,11 +152,17 @@ namespace RPG.Control
 
         private bool InteractWithCombat()
         {
+
             Fighting fighter = GetComponent<Fighting>();
-            if (IsAggrevated() && fighter.CanAttack(player))
+            if (combatTargetGameObject == null)
+            {
+                fighter.Cancel();
+                return false;
+            }
+            if (IsAggrevated() && fighter.CanAttack(combatTargetGameObject))
             {
                 timeSinceLastSawPlayer = 0;
-                fighter.Attack(player);
+                fighter.Attack(combatTargetGameObject);
                 AggrevateNearbyEnemies();
                 return true;
             }
@@ -177,12 +198,13 @@ namespace RPG.Control
                 //aggrevated
                 return true;
             }
-            return DistanceToPlayer() <= chaseDistance;
+            return DistanceToCombatTarget() <= chaseDistance;
         }
 
-        private float DistanceToPlayer()
+        private float DistanceToCombatTarget()
         {
-            float distance = Vector3.Distance(player.transform.position, transform.position);
+            if (combatTargetGameObject == null) return Mathf.Infinity;
+            float distance = Vector3.Distance(combatTargetGameObject.transform.position, transform.position);
             return distance;
         }
 
