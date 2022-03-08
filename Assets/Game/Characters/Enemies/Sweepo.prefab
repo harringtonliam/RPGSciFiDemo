@@ -100,6 +100,10 @@ PrefabInstance:
       propertyPath: isActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7343090045267146276, guid: cc221d81a14e61f459a262652e6c928a, type: 3}
+      propertyPath: alwaysAvailableToRaycast
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7531818231300668845, guid: cc221d81a14e61f459a262652e6c928a, type: 3}
       propertyPath: characterName
       value: Cleaning Robot

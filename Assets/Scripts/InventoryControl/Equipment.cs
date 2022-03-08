@@ -22,6 +22,11 @@ namespace RPG.InventoryControl
             return equippedItems[equipLocation];
         }
 
+        public Dictionary<EquipLocation, EquipableItem> GetEquippedItems()
+        {
+            return equippedItems;
+        }
+
         public void AddItem(EquipLocation slot, EquipableItem item)
         {
             Debug.Assert(item.AllowedEquiplocation == slot);

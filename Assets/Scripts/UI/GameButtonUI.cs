@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.Core;
 
 
 namespace RPG.UI
@@ -16,17 +17,18 @@ namespace RPG.UI
             {
                 if (allshowHides[i] != uiToShow)
                 {
-                    allshowHides[i].SetUiActive(false);
+                    if (!allshowHides[i].KeepOpen)
+                    {
+                        allshowHides[i].SetUiActive(false);
+                    }
                 }
-
             }
-
-
 
             if (uiToShow != null)
             {
                 uiToShow.ToggleUI();
             }
+
         }
     }
 }

@@ -26,7 +26,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90e968aec811b24a9614fcccd3a8349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversantName: 
+  conversationRange: 2.5
 --- !u!114 &-2012078917797647054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +133,18 @@ MonoBehaviour:
   characterClass: 1
   progression: {fileID: 11400000, guid: d4d55fa51858af4428e0226a373eeea0, type: 2}
   levelUpPrefab: {fileID: 7572644742596159328, guid: ada0c63dd0f253146800f9fdd2b24e34, type: 3}
+--- !u!114 &6702567755074135476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3229769403555118710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f00f37a5580e0cc4599f7f082c9762f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7371634190931447496
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -18,6 +18,11 @@ namespace RPG.Combat
 
         public bool HandleRaycast(PlayerController playerController)
         {
+            if (!IsHostile())
+            {
+                return false; ;
+            }
+
             Fighting fighting = playerController.transform.GetComponent<Fighting>();
             if (fighting.CanAttack(gameObject)  && isActive)
             {
@@ -27,6 +32,23 @@ namespace RPG.Combat
                 }
                 return true;
             }
+            return false;
+        }
+
+        private bool IsHostile()
+        {
+            AIControler aIControler = GetComponent<AIControler>();
+            if (aIControler == null) return true;
+            
+            if (aIControler != null)
+            {
+                if (aIControler.AIRelationship == AIRelationship.Hostile)
+                {
+                    return true;
+                }
+            }
+            
+
             return false;
         }
     }

@@ -67,6 +67,14 @@ PrefabInstance:
       propertyPath: rightHandTransform
       value: 
       objectReference: {fileID: 8270145695617687033}
+    - target: {fileID: 7531818231300668845, guid: cc221d81a14e61f459a262652e6c928a, type: 3}
+      propertyPath: characterName
+      value: Training Dummy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103467481348090089, guid: cc221d81a14e61f459a262652e6c928a, type: 3}
+      propertyPath: characterAbilities.Array.data[1].abilityValue
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8267484706880064922, guid: cc221d81a14e61f459a262652e6c928a, type: 3}
       propertyPath: m_Avatar
       value: 

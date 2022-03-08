@@ -3,14 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using RPG.Attributes;
 
 namespace RPG.InventoryControl
 {
     [RequireComponent(typeof(Inventory))]
     public class Container : MonoBehaviour,  IRaycastable
     {
+        [SerializeField] bool alwaysAvailableToRaycast = false;
+
         bool isOpen = false;
         ContainerLink containerLink = null;
+        
 
         private void Start()
         {
@@ -24,6 +28,11 @@ namespace RPG.InventoryControl
 
         public bool HandleRaycast(PlayerController playerController)
         {
+            if (!IsDead()  && !alwaysAvailableToRaycast)
+            {
+                return false;
+            }
+
             if (Input.GetMouseButtonDown(0))
             {
                 ContainerOpener containerOpener = playerController.transform.GetComponent<ContainerOpener>();
@@ -56,6 +65,17 @@ namespace RPG.InventoryControl
             {
                 containerLink.CloseContainer();
             }
+        }
+
+        private bool IsDead()
+        {
+            Health aiHealth = GetComponent<Health>();
+            if (aiHealth == null) return true;
+            if (aiHealth.IsDead)
+            {
+                    return true;
+            }
+            return false;
         }
 
 

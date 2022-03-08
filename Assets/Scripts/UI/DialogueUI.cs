@@ -30,7 +30,7 @@ namespace RPG.UI
             playerConversant = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerConversant>();
             playerConversant.onConversationUpdated += UpdateUI;
             nextButton.onClick.AddListener(Next);
-            //quitButton.onClick.AddListener(() => playerConversant.Quit());
+            quitButton.onClick.AddListener(() => playerConversant.Quit());
             UpdateUI();
         }
 
@@ -62,7 +62,8 @@ namespace RPG.UI
                 BuildChoiceList();
             }
 
-            nextButton.gameObject.SetActive(!playerConversant.HasPlayerChoicesNext());
+            nextButton.gameObject.SetActive(!playerConversant.HasPlayerChoicesNext() && playerConversant.HasNext());
+            quitButton.gameObject.SetActive(!playerConversant.HasNext());
 
 
         }

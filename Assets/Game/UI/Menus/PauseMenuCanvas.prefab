@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 94702132}
   - component: {fileID: 94702131}
   - component: {fileID: 1777422932}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Quit Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 200595717}
   - component: {fileID: 200595716}
   - component: {fileID: 2818743442573845787}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ResumeGameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 244353437}
   - component: {fileID: 244353436}
   - component: {fileID: 1885855715}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Load Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 715629742}
   - component: {fileID: 715629743}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -517,7 +517,7 @@ GameObject:
   - component: {fileID: 819853374}
   - component: {fileID: 819853373}
   - component: {fileID: 418921600}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Save Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -662,7 +662,7 @@ GameObject:
   - component: {fileID: 1343723806}
   - component: {fileID: 1343723808}
   - component: {fileID: 1343723807}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -741,7 +741,7 @@ GameObject:
   - component: {fileID: 1458870477}
   - component: {fileID: 1458870479}
   - component: {fileID: 1458870478}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -820,7 +820,7 @@ GameObject:
   - component: {fileID: 1718740614}
   - component: {fileID: 1718740616}
   - component: {fileID: 1718740615}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -899,7 +899,7 @@ GameObject:
   - component: {fileID: 1913805492}
   - component: {fileID: 1913805494}
   - component: {fileID: 1913805493}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -978,7 +978,7 @@ GameObject:
   - component: {fileID: 289015700917919125}
   - component: {fileID: 2523504976789586061}
   - component: {fileID: 4039371944028424948}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ButtonsBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1056,7 +1056,7 @@ GameObject:
   - component: {fileID: 289015701070555716}
   - component: {fileID: 289015701070555717}
   - component: {fileID: 8519014534783904021}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PauseMenuCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1160,6 +1160,7 @@ MonoBehaviour:
   toogleKey: 284
   uiCanvas: {fileID: 289015701070555719}
   pauseGameOnOpen: 0
+  keepOpen: 0
 --- !u!1 &5758166955287160062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,7 +1172,7 @@ GameObject:
   - component: {fileID: 4876222968946784224}
   - component: {fileID: 1460625161044991012}
   - component: {fileID: 410062969771710949}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}

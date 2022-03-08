@@ -26,6 +26,8 @@ namespace RPG.Combat
         Weapon currentWeapon;
         WeaponStore weaponStore;
         AmmunitionStore ammoStore;
+        GameConsole gameConsole;
+        CharacterSheet characterSheet;
 
 
         private void Awake()
@@ -47,6 +49,8 @@ namespace RPG.Combat
             }
 
             ammoStore = GetComponent<AmmunitionStore>();
+            characterSheet = GetComponent<CharacterSheet>();
+            gameConsole = FindObjectOfType<GameConsole>();
 
         }
 
@@ -137,8 +141,9 @@ namespace RPG.Combat
             }
 
           
-            if (currentWeaponConfig.IsRangedWeapon && !CheckLineOfSite())
+            if (currentWeaponConfig.IsRangedWeapon && !CheckLineOfSight())
             {
+                WriteToConsole("Line of sight blocked for ranged weapon.");
                 return;
             }
 
@@ -149,6 +154,7 @@ namespace RPG.Combat
             {
                 calculatedDamage = currentWeaponConfig.CalcWeaponDamage() + GetComponent<CharacterAbilities>().GetAbilityModifier(currentWeaponConfig.ModifierAbility);
             }
+
 
 
             if (currentWeaponConfig.HasProjectile())
@@ -182,7 +188,7 @@ namespace RPG.Combat
             //if none found return
             if (ammoStoreSlot < 0)
             {
-                Debug.Log("Out of ammo");
+                WriteToConsole("Out Of Ammunition");
                 return false;
             }
 
@@ -192,7 +198,7 @@ namespace RPG.Combat
 
         }
 
-        private bool CheckLineOfSite()
+        private bool CheckLineOfSight()
         {
             if (target == null) return false;
 
@@ -233,10 +239,10 @@ namespace RPG.Combat
             if (diceRoll >= 20) return true;
             if (diceRoll <= 1) return false;
             int attackRoll = diceRoll + currentWeaponConfig.WeaponToHitBonus + GetStatModifier();
-            //if (attackRoll < targetArmourClass)
-            //{
-            //    Debug.Log(gameObject + " missed their attack");
-            //}
+            if (attackRoll < targetArmourClass)
+            {
+                WriteToConsole("attack missed");
+            }
 
             return attackRoll >= targetArmourClass;
         }
@@ -259,6 +265,17 @@ namespace RPG.Combat
         private bool GetIsInRange(Transform targetTransform)
         {
             return currentWeaponConfig.WeaponRange >= Vector3.Distance(targetTransform.position, transform.position);
+        }
+
+        private void WriteToConsole(string consoleText)
+        {
+            if (gameConsole == null) return;
+            string characterName = string.Empty;
+            if (characterSheet != null)
+            {
+                characterName = characterSheet.CharacterName;
+            }
+            gameConsole.AddNewLine(characterName + ": " + consoleText);
         }
 
         public void Attack(GameObject combatTarget)

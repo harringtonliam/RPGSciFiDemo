@@ -12,6 +12,7 @@ namespace RPG.UI.SceneManagement
     {
         [SerializeField] int startSceneIndex = 1;
         [SerializeField] GameObject loadGameCanvas = null;
+ 
 
         public void LoadStartScenee()
         {
@@ -30,6 +31,11 @@ namespace RPG.UI.SceneManagement
 
             loadGameCanvas.SetActive(true);
             
+        }
+
+        public void LoadMainMenu()
+        {
+            SceneManager.LoadScene(0);
         }
 
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Saving;
 using System;
+using RPG.Core;
 
 namespace RPG.SceneManagement
 {
@@ -13,10 +14,11 @@ namespace RPG.SceneManagement
         const string defaultSaveFile = "autosave";
         const string quickSaveFile = "quicksave";
 
-        private void Awake()
+        GameConsole gameConsole;
+
+        private void Start()
         {
-            //Liam Harring removed to proper Save/Load screen can be developed
-            //StartCoroutine(LoadLastScene());
+            gameConsole = FindObjectOfType<GameConsole>();
         }
 
         private IEnumerator LoadLastScene(string savedGame)
@@ -30,8 +32,9 @@ namespace RPG.SceneManagement
 
         public void LoadSavedGame(string savedGame)
         {
-            Debug.Log("SaveWrapper LoadSavedGame " + savedGame);
+
             StartCoroutine(LoadLastScene(savedGame));
+            WriteToConsole("Game loaded from save: " + savedGame);
         }
 
 
@@ -44,6 +47,7 @@ namespace RPG.SceneManagement
         public void Save(string fileName)
         {
             GetComponent<SavingSystem>().Save(fileName);
+            WriteToConsole("Game saved: " + fileName);
         }
 
         public void QuickSave()
@@ -74,6 +78,13 @@ namespace RPG.SceneManagement
 
             return allSaveFiles;
 
+        }
+
+
+        private void WriteToConsole(string textToWrite)
+        {
+            if (gameConsole == null) return;
+            gameConsole.AddNewLine(textToWrite);
         }
     }
 

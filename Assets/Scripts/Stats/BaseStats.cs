@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using RPG.Core;
+using RPG.Attributes;
 
 namespace RPG.Stats
 {
@@ -17,6 +19,8 @@ namespace RPG.Stats
         
         int currentLevel = 0;
         Experience experience;
+        GameConsole gameConsole; 
+        CharacterSheet characterSheet;
 
         private void Awake()
         {
@@ -26,6 +30,8 @@ namespace RPG.Stats
         private void Start()
         {
             currentLevel = CalculateLevel();
+            gameConsole = FindObjectOfType<GameConsole>();
+            characterSheet = GetComponent<CharacterSheet>();
         }
 
         private void OnEnable()
@@ -62,18 +68,15 @@ namespace RPG.Stats
             {
                 Instantiate(levelUpPrefab, transform);
             }
+            WriteToConsole("level up.  New level = " + currentLevel.ToString());
         }
 
         public float GetStat(Stat stat)
         {
 
-
             int level = GetLevel();
-            //float additiveModifier = GetAdditiveModifier(stat);
-            //float percentageModifier = GetPercenatgeModifier(stat);
 
-
-            return (progression.GetStat(stat, characterClass, level));// + additiveModifier) * (1+ (percentageModifier/100));
+            return (progression.GetStat(stat, characterClass, level));
         }
 
         private float GetAdditiveModifier(Stat stat)
@@ -131,11 +134,6 @@ namespace RPG.Stats
 
             for (int level = maxLevels; level >= 1; --level)
             {
-                //if (gameObject.tag == "Player")
-                //{
-                //    Debug.Log("GetLevel loop " + level + " current xp=" + currentXP + " level xp="  + progression.GetStat(Stat.ExperienceToLevelUp, characterClass, level));   
-                //}
-                 
                 if(currentXP >= progression.GetStat(Stat.ExperienceToLevelUp, characterClass, level))
                 {
                     return level;
@@ -143,6 +141,17 @@ namespace RPG.Stats
             }
             return 1;
 
+        }
+
+        private void WriteToConsole(string textToWrite)
+        {
+            if (gameConsole == null) return;
+            string name = string.Empty;
+            if (characterSheet != null)
+            {
+                name = characterSheet.CharacterName;
+            }
+            gameConsole.AddNewLine(name + ": " + textToWrite);
         }
 
 

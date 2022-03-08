@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using RPG.Quests;
 
 using System;
-
+using RPG.Core;
 
 namespace RPG.DialogueControl
 {
@@ -19,10 +20,14 @@ namespace RPG.DialogueControl
         private List<string> children = new List<string>();
         [SerializeField]
         private Rect rect = new Rect(0, 0, 200, 100);
-        [SerializeField] string onEnterAction;
-        [SerializeField] string onExitAction;
-
-
+        [SerializeField] DialogueNodeAction onEnterAction;
+        [SerializeField] Quest onEnterQuest;
+        [SerializeField] DialogueNodeAction onExitAction;
+        [SerializeField] Quest onExitQuest;
+        [SerializeField] string onEnterQuestObjective;
+        [SerializeField] string onExitQuestObjective;
+        [SerializeField] string onTriggerDialogueWithTag;
+        [SerializeField] Condition condition;
 
 
         public string DialogueText
@@ -53,7 +58,7 @@ namespace RPG.DialogueControl
             get { return isPlayerSpeaking; }
         }
 
-        public string OnEnterAction
+        public DialogueNodeAction OnEnterAction
         {
             get
             {
@@ -61,12 +66,48 @@ namespace RPG.DialogueControl
             }
         }
 
-        public string  OnExitAction
+        public DialogueNodeAction  OnExitAction
         {
             get
             {
                 return onExitAction;
             }
+        }
+
+        public Quest OnExitQuest
+        {
+            get
+            {
+                return onExitQuest;
+            }
+        }
+
+        public Quest OnEnterQuest
+        {
+            get
+            {
+                return onEnterQuest;
+            }
+        }
+
+        public string OnEnterQuestObective
+        {
+            get { return onEnterQuestObjective; }
+        }
+
+        public string OnExitQuestObjective
+        {
+            get { return onExitQuestObjective; }
+        }
+
+        public bool CheckCondition(IEnumerable<IPredicateEvaluator> evaluators)
+        {
+            return condition.Check(evaluators);
+        }
+
+        public string OnTriggerDialogueWithTag
+        {
+            get { return onTriggerDialogueWithTag; }
         }
 
 
@@ -109,6 +150,8 @@ namespace RPG.DialogueControl
             isPlayerSpeaking = newIsPlayerSpeaking;
             EditorUtility.SetDirty(this);
         }
+
+
 #endif
     }
 }

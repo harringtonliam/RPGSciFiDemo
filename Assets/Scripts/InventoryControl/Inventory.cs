@@ -15,8 +15,6 @@ namespace RPG.InventoryControl
         InventorySlot[] inventorySlots;
 
 
-
- 
         [Serializable]
         public struct InventorySlot
         {
@@ -26,6 +24,20 @@ namespace RPG.InventoryControl
         }
 
         public event Action inventoryUpdated;
+
+        private void Awake()
+        {
+            InventorySlot[] tempInevntorySlots = new InventorySlot[inventorySize];
+
+            if (inventorySlots != null)
+            {
+                for (int i = 0; i < inventorySlots.Length; i++)
+                {
+                    tempInevntorySlots[i] = inventorySlots[i];
+                }
+            }
+            inventorySlots = tempInevntorySlots;
+        }
 
         public static Inventory GetPlayerInventory()
         {
@@ -130,20 +142,7 @@ namespace RPG.InventoryControl
             return true;
         }
 
-        private void Awake()
-        {
-            InventorySlot[] tempInevntorySlots = new InventorySlot[inventorySize];
 
-            if (inventorySlots != null)
-            {
-                for (int i = 0; i < inventorySlots.Length; i++)
-                {
-                    tempInevntorySlots[i] = inventorySlots[i];
-                }
-            }
-            //inventorySlots = new InventorySlot[inventorySize];
-            inventorySlots = tempInevntorySlots;
-        }
 
         private int FindSlot(InventoryItem item )
         {
@@ -212,7 +211,6 @@ namespace RPG.InventoryControl
 
         public void RestoreState(object state)
         {
-            Debug.Log("Restore State " + gameObject.name);
             var slotStrings = (InventorySlotRecord[])state;
             for (int i = 0; i < inventorySize; i++)
             {

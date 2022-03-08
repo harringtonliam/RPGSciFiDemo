@@ -11,8 +11,6 @@ namespace RPG.UI.InventoryControl
 
     public class GroundSlotUI : MonoBehaviour, IItemHolder, IDragContainer<InventoryItem>
     {
-        [SerializeField] InventoryItemIcon icon = null;
-
         ScenePickups scenePickups;
         GameObject player;
 

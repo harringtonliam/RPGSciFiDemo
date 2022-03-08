@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Control;
 using RPG.Attributes;
+using System;
 
 namespace RPG.DialogueControl
 {
@@ -21,6 +22,11 @@ namespace RPG.DialogueControl
         public Sprite ConversantPortrait
         {
             get { return conversantPortrait; }
+        }
+
+        public Dialogue Dialogue
+        {
+            get { return dialogue; }
         }
 
         private void Start()
@@ -51,6 +57,11 @@ namespace RPG.DialogueControl
                 return false;
             }
 
+            if(IsHostile())
+            {
+                return false; ;
+            }
+
             if (Input.GetMouseButtonDown(0))
             {
 
@@ -61,7 +72,19 @@ namespace RPG.DialogueControl
             return true;
         }
 
+        private bool IsHostile()
+        {
+            AIControler aIControler = GetComponent<AIControler>();
+            if (aIControler != null)
+            {
+                if (aIControler.AIRelationship == AIRelationship.Hostile)
+                {
+                    return true;
+                }
+            }
 
+            return false;
+        }
     }
 
 }

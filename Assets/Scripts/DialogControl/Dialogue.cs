@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using UnityEditor.Callbacks;
 
 namespace RPG.DialogueControl
 {
@@ -15,6 +14,7 @@ namespace RPG.DialogueControl
 
 
         Dictionary<string, DialogueNode> nodeLookUp = new Dictionary<string, DialogueNode>();
+        Dictionary<string, DialogueNode> childNodeLookUp = new Dictionary<string, DialogueNode>();
 
         private void Awake()
         {
@@ -24,10 +24,20 @@ namespace RPG.DialogueControl
         private void OnValidate()
         {
             nodeLookUp.Clear();
+            childNodeLookUp.Clear();
             foreach (var node in GetAllNodes())
             {
                 nodeLookUp[node.name] = node;
+
             }
+            foreach (var node in GetAllNodes())
+            {
+                foreach (var childNode in GetAllChildren(node))
+                {
+                    childNodeLookUp[childNode.name] = childNode;
+                }
+            }
+
         }
 
         public IEnumerable<DialogueNode> GetAllNodes()
@@ -35,10 +45,9 @@ namespace RPG.DialogueControl
             return nodes;
         }
 
-        public DialogueNode GetRootNode()
+        public IEnumerable<DialogueNode> GetRootNodes()
         {
-
-            return nodes[0];
+             return GetNodesWithNoParent();
         }
 
         public IEnumerable<DialogueNode> GetAllChildren(DialogueNode parentNode)
@@ -77,9 +86,22 @@ namespace RPG.DialogueControl
                 {
                     yield return node;
                 }
+            }
+        }
 
+        private IEnumerable<DialogueNode> GetNodesWithNoParent()
+        {
+
+            List<DialogueNode> nodesFound = new List<DialogueNode>();
+            foreach (DialogueNode node in nodes)
+            {
+                if (!childNodeLookUp.ContainsKey(node.name))
+                {
+                    nodesFound.Add(node);
+                }
             }
 
+            return nodesFound;
         }
 
 #if UNITY_EDITOR

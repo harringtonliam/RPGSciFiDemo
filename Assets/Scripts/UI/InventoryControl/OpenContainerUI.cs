@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.InventoryControl;
+using UnityEngine.UI;
 
 namespace RPG.UI.InventoryControl
 {
@@ -9,6 +10,8 @@ namespace RPG.UI.InventoryControl
     {
         [SerializeField] GameObject uiCanvas = null;
         [SerializeField] InventoryUI containerInventoryUI = null;
+        [SerializeField] ScrollRect containerscrollRect;
+        [SerializeField] ScrollRect playerscrollRect;
 
 
         void Start()
@@ -22,6 +25,17 @@ namespace RPG.UI.InventoryControl
             if (containerInventoryUI != null)
             {
                 containerInventoryUI.SetInventoryObject(inventory);
+            }
+
+            if (containerscrollRect != null)
+            {
+                containerscrollRect.verticalNormalizedPosition = 1f;
+                Canvas.ForceUpdateCanvases();
+            }
+            if (playerscrollRect != null)
+            {
+                playerscrollRect.verticalNormalizedPosition = 1f;
+                Canvas.ForceUpdateCanvases();
             }
         }
 

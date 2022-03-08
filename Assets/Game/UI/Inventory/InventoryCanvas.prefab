@@ -867,6 +867,7 @@ MonoBehaviour:
   toogleKey: 105
   uiCanvas: {fileID: 7567866127552523186}
   pauseGameOnOpen: 0
+  keepOpen: 0
 --- !u!1 &7567866128378058952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,8 +1198,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5ec129b5232c19141b21dcfa1a907e58, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: a1bf7ca01e090d9428044fdd4dff0956, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3419,7 +3420,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 225771334336128373, guid: 1d21f66dd6a7bec4598befc5305bb9fd, type: 3}
       propertyPath: equipLocation
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2341032916947117340, guid: 1d21f66dd6a7bec4598befc5305bb9fd, type: 3}
       propertyPath: m_SizeDelta.x

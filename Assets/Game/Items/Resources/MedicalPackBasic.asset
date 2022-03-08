@@ -23,3 +23,4 @@ MonoBehaviour:
   medicalPackHealingDice: 8
   medicalPackHealingDiceNumber: 1
   medicalPackHealingAdditiveBonus: 1
+  useFX: {fileID: 8856529011500970161, guid: f05b3719c8918774e8bd6b1d21d30975, type: 3}

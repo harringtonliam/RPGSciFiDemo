@@ -18,21 +18,25 @@ namespace RPG.Control
         [SerializeField] PatrolPath patrolPath;
         [SerializeField] float waypointTolerance = 1f;
         [SerializeField] float waypointPauseTime = 2f;
-        [Range (0f, 1f)]
+        [Range(0f, 1f)]
         [SerializeField] float patrolSpeedFraction = 0.2f;
         [SerializeField] float shoutDistance = 5f;
         [SerializeField] GameObject combatTargetGameObject;
 
         GameObject player;
         Mover mover;
-        
+
 
         Vector3 guardPosition;
         float timeSinceLastSawPlayer = Mathf.Infinity;
         float timeSinceAggrevated = Mathf.Infinity;
         float timeAtWaypoint = Mathf.Infinity;
-        int currentWaypointIndex =0;
-        bool canAggrivateOthers = true;
+        int currentWaypointIndex = 0;
+
+        public AIRelationship AIRelationship
+        {
+            get{ return aIRelationship;}
+        }
 
         private void Awake()
         {
@@ -175,7 +179,7 @@ namespace RPG.Control
 
         private void AggrevateNearbyEnemies()
         {
-            if (!canAggrivateOthers) return;
+            if (aIRelationship != AIRelationship.Hostile) return;
 
             RaycastHit[] hits = Physics.SphereCastAll(transform.position, shoutDistance, Vector3.up, 0f);
             foreach (var hit in hits)
@@ -187,7 +191,6 @@ namespace RPG.Control
                     ai.Aggrevate();
                 }
             }
-            canAggrivateOthers = false;
 
         }
 

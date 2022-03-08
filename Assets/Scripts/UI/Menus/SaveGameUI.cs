@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.SceneManagement;
 using TMPro;
+using RPG.Core;
 
 namespace RPG.UI.Menus
 {
@@ -10,6 +11,8 @@ namespace RPG.UI.Menus
     {
         [SerializeField] TextMeshProUGUI savedGameNameText = null;
         [SerializeField] TextMeshProUGUI savedGameTimeText = null;
+
+
 
 
 
@@ -24,6 +27,7 @@ namespace RPG.UI.Menus
         public void SaveGame()
         {
             FindObjectOfType<SavingWrapper>().Save(savedGameNameText.text);
+
         }
 
         public void DeleteGame()
@@ -33,10 +37,10 @@ namespace RPG.UI.Menus
 
         public void LoadGame()
         {
-            Debug.Log("Save game ui  = Loadgame");
             FindObjectOfType<SavingWrapper>().LoadSavedGame(savedGameNameText.text);
 
         }
+
 
     }
 

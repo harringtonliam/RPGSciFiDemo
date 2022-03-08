@@ -43,17 +43,14 @@ namespace RPG.InventoryControl
         public void StartPickupRetrieval(GameObject pickup)
         {
             GetComponent<ActionScheduler>().StartAction(this);
-            target = pickup.GetComponent<Pickup>(); ;
+            target = pickup.GetComponent<Pickup>(); 
         }
-
 
         public void Cancel()
         {
             target = null;
             GetComponent<Mover>().Cancel();
         }
-
-
 
         private bool GetIsInRange()
         {

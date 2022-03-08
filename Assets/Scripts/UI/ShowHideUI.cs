@@ -10,6 +10,12 @@ namespace RPG.UI
         [SerializeField] KeyCode toogleKey = KeyCode.Escape;
         [SerializeField] GameObject uiCanvas = null;
         [SerializeField] bool pauseGameOnOpen = false;
+        [SerializeField] bool keepOpen = false;
+
+        public bool KeepOpen
+        {
+            get { return keepOpen; }
+        }
 
         // Start is called before the first frame update
         void Start()
