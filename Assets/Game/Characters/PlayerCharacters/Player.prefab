@@ -178,16 +178,19 @@ MonoBehaviour:
     texture2D: {fileID: 2800000, guid: 44a99ee545fd8ba46a452b12c1f9378b, type: 3}
     hotspot: {x: 0, y: 0}
   - cursorType: 2
-    texture2D: {fileID: 2800000, guid: ce721f19cdaf0c94aa847c79afb72708, type: 3}
+    texture2D: {fileID: 2800000, guid: 1e1ecf843f705b34ab304dff88b037c1, type: 3}
     hotspot: {x: 0, y: 0}
   - cursorType: 3
-    texture2D: {fileID: 2800000, guid: 44a99ee545fd8ba46a452b12c1f9378b, type: 3}
+    texture2D: {fileID: 2800000, guid: 8ea795c067613354898068091ffc7130, type: 3}
     hotspot: {x: 0, y: 0}
   - cursorType: 4
     texture2D: {fileID: 2800000, guid: f8c873f1e53e83f4aabf342d6be1dfc3, type: 3}
     hotspot: {x: 0, y: 0}
   - cursorType: 5
     texture2D: {fileID: 2800000, guid: 96d4bfdb0d6d8c042bf8fccf6524d239, type: 3}
+    hotspot: {x: 0, y: 0}
+  - cursorType: 6
+    texture2D: {fileID: 2800000, guid: 7f6c6fdab50f1054c9820b737360db07, type: 3}
     hotspot: {x: 0, y: 0}
   raycastRadius: 0.5
 --- !u!114 &8300333878504395852
@@ -311,12 +314,28 @@ PrefabInstance:
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 200776545724110557, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
+      propertyPath: characterAbilities.Array.data[1].abilityValue
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 200776545724110557, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
       propertyPath: characterAbilities.Array.data[2].abilityValue
       value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 200776545724110557, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
+      propertyPath: characterAbilities.Array.data[3].abilityValue
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 200776545724110557, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
       propertyPath: characterAbilities.Array.data[4].abilityValue
-      value: 14
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 200776545724110557, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
+      propertyPath: characterAbilities.Array.data[5].abilityValue
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1889934385504813977, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
+      propertyPath: rank
+      value: Private
       objectReference: {fileID: 0}
     - target: {fileID: 1889934385504813977, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
       propertyPath: portrait
@@ -326,9 +345,9 @@ PrefabInstance:
       propertyPath: characterName
       value: Kim
       objectReference: {fileID: 0}
-    - target: {fileID: 3834406477053990445, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
+    - target: {fileID: 3615775706720281312, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
+      propertyPath: m_audioClip
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4278194240574039777, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
       propertyPath: leftHandTransform

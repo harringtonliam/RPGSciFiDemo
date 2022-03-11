@@ -3,18 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using RPG.Attributes;
+using TMPro;
 
 namespace RPG.UI.InGame
 {
     public class PlayerCharacterUI : MonoBehaviour
     {
         [SerializeField] RectTransform foregroundHeealthBar = null;
+        [SerializeField] TextMeshProUGUI nameText = null;
+        [SerializeField] TextMeshProUGUI rankText = null;
+        [SerializeField] TextMeshProUGUI currentHPText = null;
+        [SerializeField] Image portraitImage = null;
 
         GameObject playerCharacterGameObject = null;
         Health health = null;
 
 
         string characterName = null;
+
+
 
         public void SetUp(GameObject newPlayerCharacterGameObject)
         {
@@ -24,17 +31,56 @@ namespace RPG.UI.InGame
             CharacterSheet characterSheet = playerCharacterGameObject.GetComponent<CharacterSheet>();
             if (characterSheet != null)
             {
-                iconImage.sprite = characterSheet.Portrait;
+                portraitImage.sprite = characterSheet.Portrait;
                 iconImage.enabled = true;
-                characterName = characterSheet.name;
+                characterName = characterSheet.CharacterName;
+                nameText.text = characterName;
+                if (rankText != null)
+                {
+                    rankText.text = characterSheet.Rank;
+                }
             }
 
             health = playerCharacterGameObject.GetComponent<Health>();
+            health.healthUpdated += UpdateHealth;
+            SetHealthText();
+
         }
 
-        void Update()
+        private void SetHealthText()
         {
             if (health == null) return;
+            if (currentHPText != null)
+            {
+                currentHPText.text = health.HealthPoints.ToString();
+            }
+            SetHelthPointTextColor();
+        }
+
+        private void SetHelthPointTextColor()
+        {
+            if (health.HealthPoints < (health.GetMaxHealthPoints() * 0.33f))
+            {
+                currentHPText.faceColor = Color.red;
+            }
+            else if (health.HealthPoints < (health.GetMaxHealthPoints() * 0.66f))
+            {
+                currentHPText.faceColor = Color.yellow;
+            }
+            else if (health.HealthPoints < (health.GetMaxHealthPoints()))
+            {
+                currentHPText.faceColor = Color.green;
+            }
+            else
+            {
+                currentHPText.faceColor = Color.white;
+            }
+        }
+
+        private void UpdateHealth()
+        {
+            if (health == null) return;
+            SetHealthText();
             if (foregroundHeealthBar == null) return;
             foregroundHeealthBar.localScale = new Vector3(health.HealthPoints / health.GetMaxHealthPoints(), 1, 1);
         }

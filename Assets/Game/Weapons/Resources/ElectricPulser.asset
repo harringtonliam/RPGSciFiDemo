@@ -32,4 +32,4 @@ MonoBehaviour:
   isRightHanded: 1
   isRangedWeapon: 0
   projectile: {fileID: 0}
-  modifierAbility: 0
+  modifierAbility: 3

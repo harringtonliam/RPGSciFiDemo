@@ -66,7 +66,7 @@ namespace RPG.DialogueControl
             {
 
                 PlayerConversant playerConversant = callingController.GetComponent<PlayerConversant>();
-                playerConversant.StartDialogue( this, dialogue);
+                playerConversant.StartDialogue(this, dialogue);
    
             }
             return true;

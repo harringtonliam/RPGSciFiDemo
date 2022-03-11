@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 230083119937022885}
   - component: {fileID: 4705880636383050788}
   - component: {fileID: 6867303368489367846}
+  - component: {fileID: 7025257131827973857}
   m_Layer: 5
   m_Name: QuickItemSlot
   m_TagString: Untagged
@@ -105,6 +106,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipPrefab: {fileID: 6796662661069912602, guid: 65202f695f8863a4098549973d7d484d, type: 3}
+--- !u!114 &7025257131827973857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230083119937022875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48660db120116bd4698ce0bf10361ed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6904750287359992760
 PrefabInstance:
   m_ObjectHideFlags: 0

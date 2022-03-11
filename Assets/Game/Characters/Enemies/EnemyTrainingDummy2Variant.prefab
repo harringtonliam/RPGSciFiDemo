@@ -122,6 +122,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyTrainingDummy2Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3558953273079618244, guid: cc221d81a14e61f459a262652e6c928a, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9930d5b4be15bb04c9d0a6fa0d7e6b2e, type: 3}
+    - target: {fileID: 3558953273079618245, guid: cc221d81a14e61f459a262652e6c928a, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 75adfe9a619833445a701305b983e548, type: 3}
+    - target: {fileID: 4415984554010688448, guid: cc221d81a14e61f459a262652e6c928a, type: 3}
+      propertyPath: chaseDistance
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 4415984554010688448, guid: cc221d81a14e61f459a262652e6c928a, type: 3}
       propertyPath: shoutDistance
       value: 8
@@ -134,6 +146,10 @@ PrefabInstance:
       propertyPath: rightHandTransform
       value: 
       objectReference: {fileID: 7064626686746374763}
+    - target: {fileID: 5324155772424853717, guid: cc221d81a14e61f459a262652e6c928a, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5402676002271659827, guid: cc221d81a14e61f459a262652e6c928a, type: 3}
       propertyPath: dockedItems.Array.data[1].number
       value: 1
@@ -146,13 +162,29 @@ PrefabInstance:
       propertyPath: dockedItems.Array.data[3].number
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5761420161370171471, guid: cc221d81a14e61f459a262652e6c928a, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531818231300668845, guid: cc221d81a14e61f459a262652e6c928a, type: 3}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: d0314c3c86cbd6a438ce0ad3dcc05f0d, type: 3}
     - target: {fileID: 7531818231300668845, guid: cc221d81a14e61f459a262652e6c928a, type: 3}
       propertyPath: characterName
       value: Training Dummy
       objectReference: {fileID: 0}
     - target: {fileID: 8103467481348090089, guid: cc221d81a14e61f459a262652e6c928a, type: 3}
+      propertyPath: characterAbilities.Array.data[0].abilityValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103467481348090089, guid: cc221d81a14e61f459a262652e6c928a, type: 3}
       propertyPath: characterAbilities.Array.data[1].abilityValue
-      value: 8
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103467481348090089, guid: cc221d81a14e61f459a262652e6c928a, type: 3}
+      propertyPath: characterAbilities.Array.data[4].abilityValue
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc221d81a14e61f459a262652e6c928a, type: 3}

@@ -15,11 +15,11 @@ MonoBehaviour:
   itemID: a1f418b8-65d3-4d5d-bcac-bf79a5139cad
   displayName: Combat Armour
   description: Combat Armoour provides protection for the whole body.  However it
-    does restrict movment slightly
+    does restrict movment somewhat
   icon: {fileID: 21300000, guid: 9239d38cb7dc2eb40b56d1709c7eb252, type: 3}
   pickup: {fileID: 7864711616720041944, guid: 587e0cc6d9672914e9944a73dd98ac35, type: 3}
   isStackable: 0
   maxNumberInStack: 1
   allowedEquipLocation: 1
   armourClassBonus: 7
-  maxDexBonus: 1
+  maxDexBonus: 0

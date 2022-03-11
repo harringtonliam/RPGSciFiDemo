@@ -203,6 +203,7 @@ namespace RPG.Combat
             if (target == null) return false;
 
             Vector3 lineOfSightStart = currentWeaponConfig.GetTransform(rightHandTransform, leftHandTransform).position;
+            lineOfSightStart.x = lineOfSightStart.x + 0.15f;
             Vector3 lineOfSightEnd = GetAimLocation();
 
             Vector3 lineOfSiteDirection = (lineOfSightEnd - lineOfSightStart).normalized;
@@ -210,6 +211,7 @@ namespace RPG.Combat
             Ray ray = new Ray(lineOfSightStart, lineOfSiteDirection);
             RaycastHit hit;
             Physics.Raycast(ray, out hit, currentWeaponConfig.WeaponRange);
+            Debug.Log("Check line of site for " + gameObject.name + " hit=" + hit.transform.gameObject.name);
             Health targetHealth = hit.transform.GetComponent<Health>();
 
             if (targetHealth == null || targetHealth != target)

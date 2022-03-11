@@ -39,6 +39,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de1ced23fb606f489e334e46013e76b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dockedItems:
+  - ammunition: {fileID: 0}
+    number: 0
+  - ammunition: {fileID: 0}
+    number: 0
+  - ammunition: {fileID: 0}
+    number: 0
 --- !u!114 &1423569256957742641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,6 +58,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042787eaafb37f043bc09b72094d946f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dockedItems:
+  - actionItem: {fileID: 0}
+    number: 0
+  - actionItem: {fileID: 0}
+    number: 0
+  - actionItem: {fileID: 0}
+    number: 0
 --- !u!114 &2776090773562456005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +187,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39832df4682bb2e4395c1204df300eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dockedItems:
+  - weaponConfig: {fileID: 0}
+    number: 0
+    isActive: 0
+  - weaponConfig: {fileID: 0}
+    number: 0
+    isActive: 0
+  - weaponConfig: {fileID: 0}
+    number: 0
+    isActive: 0
+  - weaponConfig: {fileID: 0}
+    number: 0
+    isActive: 0
 --- !u!1001 &2227738939054634677
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -262,10 +289,6 @@ PrefabInstance:
     - target: {fileID: 200776545724110557, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
       propertyPath: characterAbilities.Array.data[4].abilityValue
       value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 3834406477053990445, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4278194240574039777, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
       propertyPath: leftHandTransform

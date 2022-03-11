@@ -11,7 +11,7 @@ using RPG.Quests;
 
 namespace RPG.DialogueControl
 {
-    public class PlayerConversant : MonoBehaviour
+    public class PlayerConversant : MonoBehaviour, IAction
     {
         [SerializeField] float conversationRange = 2f;
 
@@ -91,6 +91,7 @@ namespace RPG.DialogueControl
 
         public void StartDialogue(AIConversant newConverstant, Dialogue newDialogue)
         {
+            GetComponent<ActionScheduler>().StartAction(this);
             currentConversant = newConverstant;
             currentDialog = newDialogue;
             dialogStarted = false;
@@ -312,6 +313,12 @@ namespace RPG.DialogueControl
         {
             var evaluators =  GetComponents<IPredicateEvaluator>();
             return evaluators;
+        }
+
+        public void Cancel()
+        {
+            currentConversant = null;
+            GetComponent<Mover>().Cancel();
         }
     }
 

@@ -63,7 +63,7 @@ namespace RPG.UseablePropControl
 
         public CursorType GetCursorType()
         {
-            return CursorType.Pickup;
+            return CursorType.Use;
         }
 
         public bool HandleRaycast(PlayerController playerController)

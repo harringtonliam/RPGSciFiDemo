@@ -343,16 +343,16 @@ PrefabInstance:
       value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1889934385504813977, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
+      propertyPath: rank
+      value: Private
+      objectReference: {fileID: 0}
+    - target: {fileID: 1889934385504813977, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
       propertyPath: portrait
       value: 
       objectReference: {fileID: 21300000, guid: cc459d28e635b934282996367120568e, type: 3}
     - target: {fileID: 1889934385504813977, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
       propertyPath: characterName
-      value: Lee
-      objectReference: {fileID: 0}
-    - target: {fileID: 3834406477053990445, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
+      value: Owl
       objectReference: {fileID: 0}
     - target: {fileID: 4278194240574039777, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
       propertyPath: leftHandTransform

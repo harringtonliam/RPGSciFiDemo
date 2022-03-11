@@ -6,8 +6,10 @@ namespace RPG.Stats
     public enum CharacterClass
     {
         Commoner,
-        Fighter
-
+        Fighter,
+        Medic,
+        Specialist,
+        Scout
     }
 
 }

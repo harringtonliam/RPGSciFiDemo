@@ -13,6 +13,8 @@ namespace RPG.Attributes
         [SerializeField] UnityEvent<float> takeDamage;
         [SerializeField] UnityEvent onDie;
 
+        public event Action healthUpdated;
+
         GameConsole gameConsole;
         CharacterSheet characterSheet;
         string characterName;
@@ -39,7 +41,11 @@ namespace RPG.Attributes
 
             if (healthPoints < 0)
             {
-                healthPoints = GetComponent<BaseStats>().GetStat(Stat.Health);
+                healthPoints = GetMaxHealthPoints();
+            }
+            if (healthUpdated != null)
+            {
+                healthUpdated();
             }
 
 
@@ -70,8 +76,18 @@ namespace RPG.Attributes
 
         public float GetMaxHealthPoints()
         {
+            BaseStats baseStats = GetComponent<BaseStats>();
+            float maxHealtHPoints = baseStats.GetStat(Stat.Health);
+            int abilityModifier = 0;
+            CharacterAbilities characterAbilities = GetComponent<CharacterAbilities>();
+            if (characterAbilities != null)
+            {
+                abilityModifier = GetComponent<CharacterAbilities>().GetAbilityModifier(Ability.Constitution);
+            }
+             
+            maxHealtHPoints = maxHealtHPoints + (abilityModifier * baseStats.GetLevel());
+            return maxHealtHPoints;
 
-            return GetComponent<BaseStats>().GetStat(Stat.Health);
         }
 
         public void TakeDamage(float damage, GameObject instigator)
@@ -81,6 +97,11 @@ namespace RPG.Attributes
             {
                 WriteDamageToConsole(damage);
             }
+            if (healthUpdated != null)
+            {
+                healthUpdated();
+            }
+
             if (healthPoints <= 0)
             {
                 AwardExperience();
@@ -98,6 +119,10 @@ namespace RPG.Attributes
         public void Heal(float healing)
         {
             healthPoints = Mathf.Min(healthPoints + healing, GetMaxHealthPoints());
+            if (healthUpdated != null)
+            {
+                healthUpdated();
+            }
         }
 
         private void AwardExperience()

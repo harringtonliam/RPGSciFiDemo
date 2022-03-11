@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: ae750373-7704-423d-a5a7-fda9904f2738
   displayName: Badly Made Pistol
-  description: Very poorly made pistol.  The sights are out, the balance is wrong,
+  description: A very poorly made pistol.  The sights are out, the balance is wrong,
     and even the barrel loosk suspect.  The chances of hitting anything looks small. 
     Next to useless.
   icon: {fileID: 0}
@@ -28,7 +28,7 @@ MonoBehaviour:
   weaponDamageDice: 4
   weaponDamageDiceNumber: 1
   weaponDamageAdditiveBonus: 0
-  weaponToHitBonus: 0
+  weaponToHitBonus: -1
   percentageBonus: 0
   weaponRange: 15
   isRightHanded: 1

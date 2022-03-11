@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 8208857045892514778}
   - component: {fileID: 1929345171}
   - component: {fileID: 5114290977890922849}
+  - component: {fileID: 7258850552838519124}
   m_Layer: 0
   m_Name: TurretGun
   m_TagString: Untagged
@@ -198,7 +199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8e40325bd8596d4aa51cf0b24d8382c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armourClassValue: 16
+  baseArmourClass: 10
+  baseMaxDexBonus: 20
 --- !u!114 &1929345166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b324fc050f1dee4ea543451166d46f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActive: 1
 --- !u!114 &1929345167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a95b0017af99cad459c4f391cc045d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: 1
+  timeBetweenAttacks: 0.75
   rightHandTransform: {fileID: 4142038974944421873}
   leftHandTransform: {fileID: 4142038974944421873}
   defaultWeaponConfig: {fileID: 11400000, guid: 6cdb897ef7e8ff14c806bfa709588c16, type: 2}
@@ -286,7 +289,7 @@ MonoBehaviour:
   - ability: 0
     abilityValue: 11
   - ability: 1
-    abilityValue: 11
+    abilityValue: 16
   - ability: 2
     abilityValue: 18
   - ability: 3
@@ -353,6 +356,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b324fc050f1dee4ea543451166d46f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActive: 1
+--- !u!114 &7258850552838519124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4140024953767949880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35c156a9f2688844ca4d834fe481a5d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Turret Gun
+  rank: No Rank
+  portrait: {fileID: 21300000, guid: cf362034e13b73644b524f2d2349684b, type: 3}
 --- !u!1 &6964869549140096153
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,6 +692,10 @@ PrefabInstance:
     - target: {fileID: 4621979844490538876, guid: 1500f674e8ebee640b85a1bf541066f1, type: 3}
       propertyPath: m_Name
       value: HeathBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621979844490538876, guid: 1500f674e8ebee640b85a1bf541066f1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1500f674e8ebee640b85a1bf541066f1, type: 3}

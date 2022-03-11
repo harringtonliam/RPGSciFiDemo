@@ -18,10 +18,12 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: ac5287c47c65d1340928db8dcc51c396, type: 3}
   pickup: {fileID: 7557242182702509475, guid: 63d8feb07ed676440a7a6abf53cb6ddc, type: 3}
   isStackable: 0
+  maxNumberInStack: 20
   allowedEquipLocation: 3
   weaponOverrideController: {fileID: 22100000, guid: d19da74225615c4438fd7e87ba03ac13, type: 2}
   equipedPrefab: {fileID: 2184448118492454962, guid: 79814e25f765d5e4386f132cf803e2fb, type: 3}
-  weaponDamageDice: 6
+  ammunitionType: 0
+  weaponDamageDice: 4
   weaponDamageDiceNumber: 1
   weaponDamageAdditiveBonus: 0
   weaponToHitBonus: 0

@@ -7,7 +7,8 @@ namespace RPG.Control
         Combat,
         UI,
         Pickup,
-        Dialog
+        Dialog,
+        Use
     }
 
 }

@@ -14,7 +14,7 @@ namespace RPG.UI.InventoryControl
         //State
         int index;
         InventoryItem item;
-        RPG.InventoryControl.Inventory inventory;
+        Inventory inventory;
 
 
 
@@ -53,6 +53,8 @@ namespace RPG.UI.InventoryControl
         {
             inventory.RemoveFromSlot(index, number);
         }
+
+
 
 
     }

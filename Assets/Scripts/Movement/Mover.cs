@@ -13,6 +13,7 @@ namespace RPG.Movement
     {
         [SerializeField] float maxSpeed = 6f;
         [SerializeField] float maxPathLength = 40f;
+        [SerializeField] AudioSource footStepSound;
 
         NavMeshAgent navMeshAgent;
         Health health;
@@ -74,13 +75,20 @@ namespace RPG.Movement
         //AnimationEvents
         public void FootR()
         {
-
+            PlayFootStepSound();
         }
         public void FootL()
         {
-
+            PlayFootStepSound();
         }
 
+        private void PlayFootStepSound()
+        {
+            if (footStepSound != null)
+            {
+                footStepSound.Play();
+            }
+        }
 
         public void Cancel()
         {

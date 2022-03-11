@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: TurretGun
   m_EditorClassIdentifier: 
   itemID: 8aa5c8e3-a7b0-461c-a852-173b13bd448c
-  displayName: 
-  description: 
+  displayName: Turret Gun
+  description: Used by automatted Gun Turrets
   icon: {fileID: 0}
   pickup: {fileID: 0}
   isStackable: 0
-  maxNumberInStack: 20
+  maxNumberInStack: 1
   allowedEquipLocation: 3
   weaponOverrideController: {fileID: 0}
   equipedPrefab: {fileID: 2184448118492454962, guid: 4a728a4e7c0947e4983713ac97f675ad, type: 3}
@@ -26,7 +26,7 @@ MonoBehaviour:
   weaponDamageDice: 8
   weaponDamageDiceNumber: 2
   weaponDamageAdditiveBonus: 2
-  weaponToHitBonus: 0
+  weaponToHitBonus: 2
   percentageBonus: 0
   weaponRange: 12
   isRightHanded: 1

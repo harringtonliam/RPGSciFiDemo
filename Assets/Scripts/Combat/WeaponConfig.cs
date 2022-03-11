@@ -34,6 +34,11 @@ namespace RPG.Combat
             get { return weaponDamageDice; }
         }
 
+        public int WeaponDamageDiceNumber
+        {
+            get { return weaponDamageDiceNumber; }
+        }
+
         public float PercentageBonus
         {
             get { return percentageBonus; }
@@ -52,6 +57,11 @@ namespace RPG.Combat
         public int WeaponToHitBonus
         {
             get { return weaponToHitBonus; }
+        }
+
+        public int WeaponDamageAdditiveBonus
+        {
+            get { return weaponDamageAdditiveBonus; }
         }
 
         public Ability ModifierAbility

@@ -23,7 +23,7 @@ MonoBehaviour:
   weaponOverrideController: {fileID: 22100000, guid: 8b614218040dab046b431fd0f2a26bae, type: 2}
   equipedPrefab: {fileID: 2184448118492454962, guid: f51c337b939648244872f3ed447103d5, type: 3}
   ammunitionType: 3
-  weaponDamageDice: 8
+  weaponDamageDice: 6
   weaponDamageDiceNumber: 1
   weaponDamageAdditiveBonus: 0
   weaponToHitBonus: 0

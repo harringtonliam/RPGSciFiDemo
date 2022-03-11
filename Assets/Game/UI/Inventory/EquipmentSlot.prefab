@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3418372459979287598}
   - component: {fileID: 225771334336128373}
   - component: {fileID: 4251237074497960115}
+  - component: {fileID: 3771752106610654350}
   m_Layer: 5
   m_Name: EquipmentSlot
   m_TagString: Untagged
@@ -105,6 +106,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipPrefab: {fileID: 6796662661069912602, guid: 65202f695f8863a4098549973d7d484d, type: 3}
+--- !u!114 &3771752106610654350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3418372459979287568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48660db120116bd4698ce0bf10361ed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8328155207334470707
 PrefabInstance:
   m_ObjectHideFlags: 0

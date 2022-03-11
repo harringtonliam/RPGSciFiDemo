@@ -323,16 +323,16 @@ PrefabInstance:
       value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1889934385504813977, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
+      propertyPath: rank
+      value: Corporal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1889934385504813977, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
       propertyPath: portrait
       value: 
       objectReference: {fileID: 21300000, guid: d5c6441465888314fbed9fe8e0d57a8e, type: 3}
     - target: {fileID: 1889934385504813977, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
       propertyPath: characterName
       value: Moa
-      objectReference: {fileID: 0}
-    - target: {fileID: 3834406477053990445, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4278194240574039777, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
       propertyPath: leftHandTransform

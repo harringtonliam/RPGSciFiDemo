@@ -22,6 +22,11 @@ namespace RPG.Stats
             }
             return abilityModifiers.GetModifier(abilityScore);
         }
+
+        public CharacterAbility[] GetCharacterAbilities()
+        {
+            return characterAbilities;
+        }
     }
 
     [System.Serializable]

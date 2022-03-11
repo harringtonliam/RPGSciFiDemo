@@ -14,13 +14,24 @@ namespace RPG.Stats
         [SerializeField] CharacterClass characterClass;
         [SerializeField] Progression progression = null;
         [SerializeField] GameObject levelUpPrefab = null;
-        
+
         public event Action onLevelUp;
-        
+
         int currentLevel = 0;
         Experience experience;
-        GameConsole gameConsole; 
+        GameConsole gameConsole;
         CharacterSheet characterSheet;
+
+        public CharacterClass CharacterClass
+        { 
+            get { return characterClass;}
+        }
+
+        public Progression Progression
+        {
+            get { return progression; }
+        }
+
 
         private void Awake()
         {
