@@ -151,7 +151,6 @@ namespace RPG.Quests
 
         public object CaptureState()
         {
-            Debug.Log("quest status capture state " + gameObject.name);
             List<object> state = new List<object>();
             foreach (QuestStatus status in statuses)
             {

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questTitle: Combat Training Part 1
   questDescription: Your orders are to proceed through the ajoining rooms, dispatch
-    any training dummies you encounter, and report to 2nd Lieutenant Wilf , who will
-    be waiting for you when you reach the other side.
+    any training dummies you encounter, and report to 2nd Lieutenant Enoch , who
+    will be waiting for you when you reach the other side.
   experiancePointReward: 180
   objectives:
   - Get to the other side of the  first training level

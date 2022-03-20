@@ -13,32 +13,54 @@ namespace RPG.UI.Menus
 
         SavingWrapper savingWrapper = null;
 
-        
+        private void Awake()
+        {
+
+        }
 
         // Start is called before the first frame update
         void Start()
         {
+            savingWrapper = FindObjectOfType<SavingWrapper>();
+            savingWrapper.onSaveUpated += Redraw;
             Redraw();
 
         }
 
         public void Redraw()
         {
-            savingWrapper = FindObjectOfType<SavingWrapper>();
             if (savingWrapper == null) return;
 
             Dictionary<string, DateTime> saveFiles = savingWrapper.ListSaveFiles();
 
-            foreach (Transform child in transform)
+            try
             {
-                Destroy(child.gameObject);
+                foreach (Transform child in transform)
+                {
+                    Destroy(child.gameObject);
+                }
+
+                foreach (var saveFile in saveFiles)
+                {
+                    var savedGameGameUI = Instantiate(loadGameGamePrefab, transform);
+                    savedGameGameUI.Setup(saveFile.Key, saveFile.Value.ToString());
+                }
+            }
+            catch (Exception)
+            {
+
+                Debug.Log("Unable to update SaveGameUI");
             }
 
-            foreach (var saveFile in saveFiles)
+        }
+
+        private void OnDestroy()
+        {
+            if (savingWrapper != null)
             {
-                var savedGameGameUI = Instantiate(loadGameGamePrefab, transform);
-                savedGameGameUI.Setup(saveFile.Key, saveFile.Value.ToString());
+                savingWrapper.onSaveUpated -= Redraw;
             }
+            
         }
 
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Movement;
 using RPG.Core;
+using System;
 
 
 namespace RPG.UseablePropControl
@@ -13,6 +14,8 @@ namespace RPG.UseablePropControl
 
 
         UseableProp target;
+
+        public event Action onUsePropCancel; 
 
         // Update is called once per frame
         void Update()
@@ -35,7 +38,8 @@ namespace RPG.UseablePropControl
         {
             transform.LookAt(target.transform);
             target.UseProp();
-            GetComponent<ActionScheduler>().CancelCurrentAction();
+            //Liam 13/03/2022 don't think this is needed.  Removed to allow fr UI to hide when player moves away from prop
+            //GetComponent<ActionScheduler>().CancelCurrentAction();
         }
 
         public void StartUseProp(GameObject useAbleProp)
@@ -49,6 +53,10 @@ namespace RPG.UseablePropControl
         {
             target = null;
             GetComponent<Mover>().Cancel();
+            if (onUsePropCancel != null)
+            {
+                onUsePropCancel();
+            }
         }
 
 
@@ -57,6 +65,7 @@ namespace RPG.UseablePropControl
         {
 
             bool isInRange = useRange >= Vector3.Distance(target.transform.position, transform.position);
+            
             return isInRange;
         }
     }

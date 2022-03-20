@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
   dialogueText: This time you'll be assessed on your ability with your side arm.  
-    You'll find a pistol and ammunition in the crate.
+    You'll find a service pistol and ammunition in the crate.
   children:
   - 0524c80e-a09f-4316-84b7-80423abfe864
   rect:
@@ -29,6 +29,7 @@ MonoBehaviour:
   onExitQuest: {fileID: 0}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and: []
 --- !u!114 &-5878885138085197601
@@ -59,6 +60,7 @@ MonoBehaviour:
   onExitQuest: {fileID: 0}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and: []
 --- !u!114 &-5877075597640351054
@@ -74,7 +76,7 @@ MonoBehaviour:
   m_Name: 88868740-7a46-4933-a6b8-a488c3e5cbdb
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
-  dialogueText: Not another test Lietenant!  How do I get out of this chicken shit
+  dialogueText: Not another test Lieutenant!  How do I get out of this chicken shit
     outfit?
   children:
   - 46a7a962-63f0-44ee-8d4a-3fc8b6732c98
@@ -90,6 +92,7 @@ MonoBehaviour:
   onExitQuest: {fileID: 0}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and: []
 --- !u!114 &-3255243598085928900
@@ -106,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
   dialogueText: Off you go then Private.  Remember to collect your weapon from the
-    crate, and go through the door when you are ready.
+    crate first, and go through the door when you are ready.
   children: []
   rect:
     serializedVersion: 2
@@ -120,6 +123,7 @@ MonoBehaviour:
   onExitQuest: {fileID: 11400000, guid: 9c2cbb07945409548ba0c200fb223a42, type: 2}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and: []
 --- !u!114 &-1144070912180775258
@@ -149,6 +153,7 @@ MonoBehaviour:
   onExitQuest: {fileID: 0}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and:
     - or:
@@ -169,7 +174,7 @@ MonoBehaviour:
   m_Name: 46a7a962-63f0-44ee-8d4a-3fc8b6732c98
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  dialogueText: Very funny Pirvate!  Now pay attention.
+  dialogueText: Very funny Private!  Now pay attention.
   children:
   - 333f90f4-6138-4ee8-95f6-a510332eae0f
   rect:
@@ -184,6 +189,7 @@ MonoBehaviour:
   onExitQuest: {fileID: 0}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and: []
 --- !u!114 &-191260520465940446
@@ -214,6 +220,7 @@ MonoBehaviour:
   onExitQuest: {fileID: 0}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and: []
 --- !u!114 &11400000
@@ -253,7 +260,7 @@ MonoBehaviour:
   m_Name: 1dd635be-ad85-4d7b-bf55-12da8a94e0db
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  dialogueText: Welcome Private KIm.  Are you ready for the next test?
+  dialogueText: Welcome Private Kim.  Are you ready for the next test?
   children:
   - d1e6d824-18c9-47be-8f23-df68a3992543
   - 88868740-7a46-4933-a6b8-a488c3e5cbdb
@@ -269,6 +276,7 @@ MonoBehaviour:
   onExitQuest: {fileID: 0}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and:
     - or:
@@ -304,6 +312,7 @@ MonoBehaviour:
   onExitQuest: {fileID: 0}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and: []
 --- !u!114 &4615855051766175813
@@ -319,7 +328,7 @@ MonoBehaviour:
   m_Name: e4774ff0-06ff-4728-a694-38e2ce052f6c
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  dialogueText: "Don\u2019t be so sure. This time your cunning will also be tested,
+  dialogueText: "Don\u2019t be too sure. This time your cunning will also be tested,
     and you'll learn about the limits of your weaponry. So don't be overconfident."
   children:
   - 3bc58038-f698-46ea-aa48-2505e8470a45
@@ -335,5 +344,6 @@ MonoBehaviour:
   onExitQuest: {fileID: 0}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and: []

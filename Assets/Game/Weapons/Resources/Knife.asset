@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 3f521459-aa2e-4360-9a4f-806cc4f6f3e9
   displayName: Knife
-  description: Military Issue Combat Knife
+  description: A military issue Combat Knife.  Useful for hand to hand combat.
   icon: {fileID: 21300000, guid: ac5287c47c65d1340928db8dcc51c396, type: 3}
   pickup: {fileID: 7557242182702509475, guid: 63d8feb07ed676440a7a6abf53cb6ddc, type: 3}
   isStackable: 0

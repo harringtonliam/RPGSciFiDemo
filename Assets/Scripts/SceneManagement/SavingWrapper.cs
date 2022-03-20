@@ -14,6 +14,8 @@ namespace RPG.SceneManagement
         const string defaultSaveFile = "autosave";
         const string quickSaveFile = "quicksave";
 
+        public event Action onSaveUpated;
+
         GameConsole gameConsole;
 
         private void Start()
@@ -48,26 +50,48 @@ namespace RPG.SceneManagement
         {
             GetComponent<SavingSystem>().Save(fileName);
             WriteToConsole("Game saved: " + fileName);
+            if (onSaveUpated!= null)
+            {
+                onSaveUpated();
+            }
+            
         }
 
         public void QuickSave()
         {
             GetComponent<SavingSystem>().Save(quickSaveFile);
+            WriteToConsole("Game quicksaved: " + quickSaveFile);
+            if (onSaveUpated != null)
+            {
+                onSaveUpated();
+            }
         }
 
         public void AutoSave()
         {
             GetComponent<SavingSystem>().Save(defaultSaveFile);
+            if (onSaveUpated != null)
+            {
+                onSaveUpated();
+            }
         }
 
         public void Delete(string filename)
         {
             GetComponent<SavingSystem>().Delete(filename);
+            if (onSaveUpated != null)
+            {
+                onSaveUpated();
+            }
         }
 
         public void DeleteDefaultSaveFile()
         {
             GetComponent<SavingSystem>().Delete(defaultSaveFile);
+            if (onSaveUpated != null)
+            {
+                onSaveUpated();
+            }
         }
 
 
@@ -75,6 +99,10 @@ namespace RPG.SceneManagement
         {
 
             Dictionary<string, DateTime> allSaveFiles = GetComponent<SavingSystem>().ListAllSaveFiles();
+            if (allSaveFiles.ContainsKey(defaultSaveFile))
+            {
+                allSaveFiles.Remove(defaultSaveFile);
+            }
 
             return allSaveFiles;
 

@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: c0c67abb-2be8-4766-8552-fc101498bc41
   displayName: Burst Rifle
-  description: Standard Issue Weapon for the Mobile Rangers
+  description: 'This is a M42B Burst Rifle, the standard issue main armament for
+    the Outland Ranger units.   It holds 100 rounds of ammunition, and is a sturdy,
+    reliable weapon requiring minimal maintenance. '
   icon: {fileID: 21300000, guid: 8ef3e234554a9574a91133080b429cc3, type: 3}
   pickup: {fileID: 390288217326872399, guid: 827176829614a084abb5d85461c615cc, type: 3}
   isStackable: 0

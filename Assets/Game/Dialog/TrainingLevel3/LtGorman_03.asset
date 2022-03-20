@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: a92fcc51-5545-4df4-9f83-a2201e6730e6
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  dialogueText: The burst rifle is in the crate.  Remeber to take it with you whn
+  dialogueText: The burst rifle is in the crate.  Remember to take it with you when
     you go.   Good Luck Private!
   children: []
   rect:
@@ -28,6 +28,7 @@ MonoBehaviour:
   onExitQuest: {fileID: 11400000, guid: a10c674cd53a4ce47a1653fecb43cc4e, type: 2}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and: []
 --- !u!114 &-6435533834133325338
@@ -58,6 +59,7 @@ MonoBehaviour:
   onExitQuest: {fileID: 0}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and: []
 --- !u!114 &-5721449463658820226
@@ -87,6 +89,7 @@ MonoBehaviour:
   onExitQuest: {fileID: 0}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and:
     - or:
@@ -123,6 +126,7 @@ MonoBehaviour:
   onExitQuest: {fileID: 0}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and: []
 --- !u!114 &-3744211735283114439
@@ -138,7 +142,7 @@ MonoBehaviour:
   m_Name: 1780c6e0-98ff-4b57-923d-37a74978ccad
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
-  dialogueText: What's her interest Lieutenant ?
+  dialogueText: What's her interest Lieutenant?
   children:
   - 7302aa2f-1930-46b7-b185-01576c79c53b
   rect:
@@ -153,6 +157,7 @@ MonoBehaviour:
   onExitQuest: {fileID: 0}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and: []
 --- !u!114 &11400000
@@ -192,7 +197,7 @@ MonoBehaviour:
   m_Name: ba2b8474-8118-43be-9dd9-960e131c3676
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
-  dialogueText: 'God to hear Lieutenant '
+  dialogueText: 'Good to hear Lieutenant '
   children:
   - 6e8b57b9-8e01-4431-885d-8352fc8e4958
   rect:
@@ -207,6 +212,7 @@ MonoBehaviour:
   onExitQuest: {fileID: 0}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and: []
 --- !u!114 &2323731625348048609
@@ -239,6 +245,7 @@ MonoBehaviour:
   onExitQuest: {fileID: 0}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and: []
 --- !u!114 &3885812483723099631
@@ -254,8 +261,8 @@ MonoBehaviour:
   m_Name: 7302aa2f-1930-46b7-b185-01576c79c53b
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  dialogueText: I don't know private.  However she runs the company and can do whatever
-    she pleases.
+  dialogueText: I don't know Private.  However she runs the company, so she  can
+    do whatever she pleases.
   children:
   - 6e8b57b9-8e01-4431-885d-8352fc8e4958
   rect:
@@ -270,6 +277,7 @@ MonoBehaviour:
   onExitQuest: {fileID: 0}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and: []
 --- !u!114 &5957283240041587855
@@ -302,6 +310,7 @@ MonoBehaviour:
   onExitQuest: {fileID: 0}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and:
     - or:
@@ -322,9 +331,9 @@ MonoBehaviour:
   m_Name: 6e8b57b9-8e01-4431-885d-8352fc8e4958
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  dialogueText: 'The mission will test your ability with the M42B Burst Rifle.  And 
-    like the last one there will be some challanges that you can solve with you weaponary
-    alone. '
+  dialogueText: The exercise will test your ability with the M42B Burst Rifle.  And 
+    like the last one there will be some challenges that you can solve with you weaponry
+    alone.  So keep your wits about you.
   children:
   - 064f7d56-86c8-4263-97f8-2080a5b8a40f
   rect:
@@ -339,5 +348,6 @@ MonoBehaviour:
   onExitQuest: {fileID: 0}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and: []

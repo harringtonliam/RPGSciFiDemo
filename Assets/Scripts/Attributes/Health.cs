@@ -71,7 +71,7 @@ namespace RPG.Attributes
 
         public float GetPercentage()
         {
-            return ( healthPoints / GetComponent<BaseStats>().GetStat(Stat.Health)) * 100;
+            return ( healthPoints / GetMaxHealthPoints()) * 100;
         }
 
         public float GetMaxHealthPoints()
@@ -187,6 +187,10 @@ namespace RPG.Attributes
         {
             float newHealthPoints = GetComponent<BaseStats>().GetStat(Stat.Health);
             healthPoints = newHealthPoints;
+            if (healthUpdated != null)
+            {
+                healthUpdated();
+            }
         }
 
         public object CaptureState()

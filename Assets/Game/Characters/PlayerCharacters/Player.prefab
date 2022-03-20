@@ -315,7 +315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 200776545724110557, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
       propertyPath: characterAbilities.Array.data[1].abilityValue
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 200776545724110557, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
       propertyPath: characterAbilities.Array.data[2].abilityValue
@@ -323,7 +323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 200776545724110557, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
       propertyPath: characterAbilities.Array.data[3].abilityValue
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 200776545724110557, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
       propertyPath: characterAbilities.Array.data[4].abilityValue

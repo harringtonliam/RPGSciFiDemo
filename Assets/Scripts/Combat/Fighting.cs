@@ -211,7 +211,7 @@ namespace RPG.Combat
             Ray ray = new Ray(lineOfSightStart, lineOfSiteDirection);
             RaycastHit hit;
             Physics.Raycast(ray, out hit, currentWeaponConfig.WeaponRange);
-            Debug.Log("Check line of site for " + gameObject.name + " hit=" + hit.transform.gameObject.name);
+            Debug.Log("Check line of site for " + gameObject.name + " target=" + target.gameObject.name +" hit=" + hit.transform.gameObject.name);
             Health targetHealth = hit.transform.GetComponent<Health>();
 
             if (targetHealth == null || targetHealth != target)

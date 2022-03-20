@@ -1246,17 +1246,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4011580194406085507, guid: 2e6cb4e928b755842880c29b54e40b54, type: 3}
-      propertyPath: m_text
-      value: 'Outland Amalgamate '
-      objectReference: {fileID: 0}
     - target: {fileID: 4011580194451067744, guid: 2e6cb4e928b755842880c29b54e40b54, type: 3}
       propertyPath: m_Name
       value: MainMenuCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 4011580194451067744, guid: 2e6cb4e928b755842880c29b54e40b54, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4011580194451067756, guid: 2e6cb4e928b755842880c29b54e40b54, type: 3}
       propertyPath: m_Pivot.x
@@ -1346,22 +1338,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 330587954}
-    - target: {fileID: 4011580195165299877, guid: 2e6cb4e928b755842880c29b54e40b54, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowLoadGameCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 4011580195165299877, guid: 2e6cb4e928b755842880c29b54e40b54, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: RPG.UI.SceneManagement.Menu, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 4011580195189414786, guid: 2e6cb4e928b755842880c29b54e40b54, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 330587954}
-    - target: {fileID: 4011580195211005275, guid: 2e6cb4e928b755842880c29b54e40b54, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 955000648457fbf4dbc77cd87a17239f, type: 3}
     - target: {fileID: 4011580195478515551, guid: 2e6cb4e928b755842880c29b54e40b54, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

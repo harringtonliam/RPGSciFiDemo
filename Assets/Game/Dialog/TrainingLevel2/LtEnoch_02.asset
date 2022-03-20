@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: bc1fb442-d42a-461c-afcd-d0cf9e6a4e5c
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  dialogueText: Err... Thiis Madam Newman, the CEO of the Outland Amalgamate she
-    has taken an interest in our training methods.
+  dialogueText: Err... This Madam Newman, the CEO of the Outland Amalgamate she has
+    taken an interest in our training methods.
   children: []
   rect:
     serializedVersion: 2

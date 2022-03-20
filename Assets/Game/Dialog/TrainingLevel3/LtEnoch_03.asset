@@ -27,6 +27,7 @@ MonoBehaviour:
   onExitQuest: {fileID: 0}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and:
     - or:
@@ -62,6 +63,7 @@ MonoBehaviour:
   onExitQuest: {fileID: 0}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and:
     - or:
@@ -100,8 +102,8 @@ MonoBehaviour:
   m_Name: 5ecd5016-5a81-419e-9e1b-c2f8ec3aa6f6
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  dialogueText: You've finished the last test.  Report to Hanger 4 at 06:00 hours
-    tomorrow moring.  You're being sent on an assigment.
+  dialogueText: You've finished the last test.  Report to Hanger 4 at 05:00 hours
+    tomorrow morning.  You're being sent on an assignment.
   children:
   - 94f4b97a-4aa5-495c-a9e8-fd3e8ab2121e
   rect:
@@ -116,6 +118,7 @@ MonoBehaviour:
   onExitQuest: {fileID: 0}
   onEnterQuestObjective: 
   onExitQuestObjective: 
+  onTriggerDialogueWithTag: 
   condition:
     and: []
 --- !u!114 &3016925623900143425
@@ -145,5 +148,6 @@ MonoBehaviour:
   onExitQuest: {fileID: 11400000, guid: a10c674cd53a4ce47a1653fecb43cc4e, type: 2}
   onEnterQuestObjective: 
   onExitQuestObjective: Report to Lt Enoch
+  onTriggerDialogueWithTag: 
   condition:
     and: []

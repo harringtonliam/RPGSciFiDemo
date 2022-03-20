@@ -13,6 +13,7 @@ namespace RPG.UI.InGame
         [SerializeField] TextMeshProUGUI nameText = null;
         [SerializeField] TextMeshProUGUI rankText = null;
         [SerializeField] TextMeshProUGUI currentHPText = null;
+        [SerializeField] TextMeshProUGUI maxHPText = null;
         [SerializeField] Image portraitImage = null;
 
         GameObject playerCharacterGameObject = null;
@@ -20,7 +21,6 @@ namespace RPG.UI.InGame
 
 
         string characterName = null;
-
 
 
         public void SetUp(GameObject newPlayerCharacterGameObject)
@@ -43,7 +43,7 @@ namespace RPG.UI.InGame
 
             health = playerCharacterGameObject.GetComponent<Health>();
             health.healthUpdated += UpdateHealth;
-            SetHealthText();
+            UpdateHealth();
 
         }
 
@@ -53,6 +53,10 @@ namespace RPG.UI.InGame
             if (currentHPText != null)
             {
                 currentHPText.text = health.HealthPoints.ToString();
+            }
+            if (maxHPText != null)
+            {
+                maxHPText.text = "/" + health.GetMaxHealthPoints().ToString();
             }
             SetHelthPointTextColor();
         }
@@ -82,7 +86,8 @@ namespace RPG.UI.InGame
             if (health == null) return;
             SetHealthText();
             if (foregroundHeealthBar == null) return;
-            foregroundHeealthBar.localScale = new Vector3(health.HealthPoints / health.GetMaxHealthPoints(), 1, 1);
+            Vector3 newScale = new Vector3(health.HealthPoints / health.GetMaxHealthPoints(), 1, 1);
+            foregroundHeealthBar.localScale = newScale;
         }
 
         private float GetHealthFraction()

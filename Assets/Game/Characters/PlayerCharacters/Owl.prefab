@@ -332,15 +332,23 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: e08d6a9feb093f34088f7f46f2620b4c, type: 2}
     - target: {fileID: 200776545724110557, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
       propertyPath: characterAbilities.Array.data[0].abilityValue
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 200776545724110557, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
+      propertyPath: characterAbilities.Array.data[1].abilityValue
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 200776545724110557, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
       propertyPath: characterAbilities.Array.data[2].abilityValue
-      value: 14
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 200776545724110557, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
+      propertyPath: characterAbilities.Array.data[3].abilityValue
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 200776545724110557, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
       propertyPath: characterAbilities.Array.data[4].abilityValue
-      value: 14
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1889934385504813977, guid: dc9e9b5ac38c7e24e8f111585ee2ba2f, type: 3}
       propertyPath: rank

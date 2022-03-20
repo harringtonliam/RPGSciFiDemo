@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 57d7f71b-631e-4b33-902e-a2d94a550d2a
   displayName: Pistol
-  description: Standard issue sidearm for the Mobile Ranger Corps
+  description: 'This is a VM70 Service Pistol.  It is the standard issue sidearm
+    for the Outland Ranger units.
+
+    It holds 22 round of ammunition, and is very
+    effective at close range.'
   icon: {fileID: 21300000, guid: ff1966353519e2341bb42d3229d232da, type: 3}
   pickup: {fileID: 6907296280056774269, guid: e08b6fe6307bfbc49a5a0307b8bcf8c2, type: 3}
   isStackable: 0

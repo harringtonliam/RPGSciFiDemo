@@ -16,7 +16,7 @@ namespace RPG.UI.Quests
         [SerializeField] TextMeshProUGUI questDetails;
         [SerializeField] TextMeshProUGUI questsShown;
         [SerializeField] Button showCompletedButton;
-
+        [SerializeField] GameObject completedStatusUI;
 
         QuestList questList;
         bool showCompleted = false;
@@ -89,6 +89,7 @@ namespace RPG.UI.Quests
         {
             questTitle.SetText(questStatus.GetQuest().QuestTitle);
             questDetails.SetText(questStatus.GetQuest().QuestDescription);
+            completedStatusUI.SetActive(questStatus.IsCompeleted());
         }
     }
 

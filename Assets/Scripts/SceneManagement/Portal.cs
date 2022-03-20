@@ -89,8 +89,15 @@ namespace RPG.SceneManagement
 
         private void EnablePlayerControl()
         {
-            GameObject player = GameObject.FindWithTag("Player");
-            player.GetComponent<PlayerController>().enabled = true;
+            try
+            {
+                GameObject player = GameObject.FindWithTag("Player");
+                player.GetComponent<PlayerController>().enabled = true;
+            }
+            catch(Exception ex)
+            {
+                Debug.Log("Portal EnablePlayerController "  + ex.Message);
+            }
         }
     }
 
